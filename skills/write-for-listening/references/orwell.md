@@ -32,6 +32,8 @@ If it is possible to cut a word out, always cut it out.
 
 Read the sentence without the word. If the fact is unchanged, the word goes. "It is important to note that", "basically", and "in order to" fail that test. A hedge such as "probably" or "I think" changes the fact. It stays.
 
+A word that marks a real turn, or that restores the thread after a long passage, changes what the listener can follow. [pacing.md](pacing.md) says when those words earn their place. A contents sentence, a preview of a point you are about to make, and an automatic recap do not earn theirs. Cut those.
+
 **Weak.** It is important to note that the guest basically said that the city allows too few new homes.
 
 **Use.** The guest says the city allows too few new homes.
@@ -69,3 +71,18 @@ The guest says the city downzoned three blocks, and the request asks what that d
 The guest says the rent rose by a third and does not say who raised it. Do not invent a landlord.
 
 **Use.** Rent rose by a third.
+
+## Reconciling these rules with listening
+
+These six rules are a style guide for prose. They are not memory research. Orwell wrote them for a reader who can reread. [pacing.md](pacing.md) is for a listener who cannot. When a style rule and a listening default meet, use this table.
+
+| Style rule | Listening default | What to do |
+| --- | --- | --- |
+| Cut a word that does no work. | Signpost a real turn. Say the count before a short list. After a long or complex passage, one recovery sentence. | Cut empty words. That includes a table-of-contents opening, a preview of the point you are about to make, and a recap after every segment or at the end of the episode. Keep a signpost only when the turn would be unclear without it. Repeat a point only so the listener can recover the thread. Restating the same point inside a paragraph still goes. |
+| Cut a word that does no work. | Split a long sentence. Add a concrete example. | Judge the sentence, not the script's word count. Two short sentences are easier to hear than one dense one. An example earns its place when it gives a specific fact from the source. |
+| Prefer the short word. | Round a number and use a short word for it. | Same direction. The speech research on word length is in pacing.md. It is separate evidence. It does not prove this style rule. |
+| Name who did it. | Keep the reference clear. | Name the actor when the source names them. A passive is the rare break of this rule, under the last rule, when the listener already knows the outcome and the new fact is who acted: "The deal was blocked by the FTC." Do not use a passive to hide an actor, and do not restate the deal to justify the passive. |
+| Skip a worn figure. | Use a concrete detail. | Same direction. A fresh detail from the episode stays. A stock metaphor still goes. |
+| Break a rule sooner than write something barbarous. | Any listening default. | If a default would make the line false or impossible to say, break the default. |
+
+A segment stands without a scheduled preview and without a scheduled recap. The old habit of previewing a point, making it, and recapping it is not a listening default. Make the point once. A recovery sentence after a long or complex passage is the exception, and it has to be doing work.
