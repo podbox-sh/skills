@@ -24,7 +24,7 @@ Do not respell from the spelling alone. That is the same guess the voice would m
 | --- | --- |
 | Siobhan | Shiv-awn |
 | Saoirse | Seer-sha |
-| Nguyen | Win |
+| Worcester | Wuss-ter |
 | Joaquin | Wah-keen |
 | Nietzsche | Nee-cha |
 | Kubernetes | Koo-ber-net-eez |

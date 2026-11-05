@@ -1,11 +1,13 @@
 ---
 name: label-speakers
-description: Put names on the anonymous speaker groups in a diarized transcript, such as SPEAKER_00 and SPEAKER_01. Use before summarizing an episode whose transcript has speaker groups but no names.
+description: Put labels on the anonymous voice groups in a timed transcript, such as gc0001 or SPEAKER_00. Use before summarizing an episode whose transcript groups voices but does not name them.
 ---
 
 # Label speakers
 
-A diarized transcript groups cues that sound like one voice, under ids such as `SPEAKER_00`. Each group is one voice. The same name on two groups means one person split in two. You decide what each group is. Any timed transcript with speaker groups works. Optional: `uvx podcue <audio>` (https://github.com/podbox-sh/podcue) produces timed, speaker-grouped cues.
+A diarized transcript groups cues that sound like one voice. The group ids are whatever the transcript uses: podcue's are `gc0001`, `gc0003`, …, and other tools use ids such as `SPEAKER_00`. Each group is one voice. The same name on two groups means one person split in two. You decide what each group is. Cues with no group (`ungrouped` in podcue) have no voice and need no label.
+
+Any timed transcript with voice groups works. Optional: `uvx podcue start <audio>` (https://github.com/podbox-sh/podcue) produces them. With podcue, read the cues in pages with `podcue cues <episodeId> --limit 200 --after <last cue id>`, and one voice with `podcue cues <episodeId> --group-id <groupId>`. A high `nearestCosine` hints that two groups are one person.
 
 If the transcript already names its speakers, as a show's own transcript often does, check a few cues per name and skip the rest of this skill.
 
@@ -43,26 +45,28 @@ Do not copy a name from the group next to it. Do not match on a repeated phrase 
 
 ## When to stop
 
-Add up each group's spoken time: the sum of its cue durations. Label the largest groups first. Stop when about 95 percent of spoken time has a label other than `undetermined`. Leave the small leftover groups `undetermined`. That does not block a summary.
+A group's spoken time is the sum of its cue durations. Label the largest groups first. Stop when about 95 percent of spoken time has a label other than `undetermined`. With podcue, `groups[].speakingMs` gives each group's time, and `label-groups` returns `labeledShare`, the same measure for the whole episode: stop at about 0.95.
+
+Label the small leftover groups `undetermined`. A summary may cite them; `podcue check` warns but passes. A cited group with no label at all fails the check.
 
 ## Output
 
-Write the labels next to the transcript as `speakers.yaml`, or apply them to the transcript itself if the user prefers. Give the evidence for each name so the user can check it.
+The labels go in `labels.json` next to the transcript:
 
-```yaml
-SPEAKER_00:
-  label: Tom Lee
-  role: host
-  evidence: "t2100: 'This is City Desk, I'm Tom Lee.'"
-SPEAKER_01:
-  label: Ana Ruiz
-  role: guest
-  evidence: "t15400: Tom says 'Welcome, Ana.' SPEAKER_01 answers next."
-SPEAKER_02:
-  label: quote
-  evidence: "t610000: Tom says 'Here's the mayor last week.'"
-SPEAKER_03:
-  label: undetermined
+```json
+{"groups": [
+  {"groupId": "gc0001", "label": "Tom Lee"},
+  {"groupId": "gc0003", "label": "Ana Ruiz"},
+  {"groupId": "gc0042", "label": "quote"},
+  {"groupId": "gc0057", "label": "undetermined"}
+]}
 ```
+
+With podcue, write it with `podcue label-groups <episodeId> '[{"groupId":"gc0001","label":"Tom Lee"}, …]'`. Send only the groups you are changing; podcue merges them into the episode's `labels.json`. Without podcue, write the file yourself in this shape.
+
+Give the user the evidence for each name, citing cues by id or start time:
+
+- `gc0001` is Tom Lee, a host. `c0001`: "This is City Desk, I'm Tom Lee."
+- `SPEAKER_01` is Ana Ruiz, the guest. `t2100`: Tom says "Welcome, Ana," and this group answers next.
 
 Tell the user the share of spoken time you labeled, and any name you are unsure of.

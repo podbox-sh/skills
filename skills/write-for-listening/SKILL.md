@@ -7,7 +7,7 @@ description: Turn a summary, notes, or any text into a script that reads well al
 
 A listener cannot reread a sentence, see a table, or check a spelling. PodBox speaks the script with a distilled Kokoro text-to-speech model, which reads common English well and guesses at names, acronyms, numbers, and symbols. Write so that the voice says the right thing and a listener follows it the first time.
 
-The input is usually a summary file from [summarize-episode](../summarize-episode/SKILL.md), but any text works. The output is a plain-text script: spoken words only, with no markdown, no citations, and no stage directions.
+The input is usually a summary file from [summarize-episode](../summarize-episode/SKILL.md): its `summary` and each paragraph's `text`. Any text works. The output is a plain-text script: spoken words only, with no markdown, no citations, and no stage directions.
 
 ## Steps
 

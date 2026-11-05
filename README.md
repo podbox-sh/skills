@@ -7,7 +7,7 @@ Agent skills for [PodBox](https://podbox.sh), which turns text an agent writes i
 | Skill | What it does |
 | --- | --- |
 | [monitor-show](skills/monitor-show/SKILL.md) | Tracks feeds and YouTube channels in SQLite, finds new episodes, downloads the audio, and writes a mono 16 kHz WAV. |
-| [label-speakers](skills/label-speakers/SKILL.md) | Names the anonymous speaker groups in a diarized transcript. |
+| [label-speakers](skills/label-speakers/SKILL.md) | Labels the anonymous voice groups in a timed transcript, in a `labels.json`. |
 | [summarize-episode](skills/summarize-episode/SKILL.md) | Writes a summary whose paragraphs cite the transcript cues they came from, and says plainly what the speaker left out. |
 | [write-for-listening](skills/write-for-listening/SKILL.md) | Turns a summary or any text into a script that reads well aloud: plain words, pacing for the ear, and respelling for the voice. |
 
@@ -17,7 +17,9 @@ Agent skills for [PodBox](https://podbox.sh), which turns text an agent writes i
 monitor-show -> transcript -> label-speakers -> summarize-episode -> write-for-listening -> PodBox feed
 ```
 
-Any transcript with times and speakers works: a show's own transcript, YouTube captions, or Whisper output. Optional: `uvx podcue <audio>` (https://github.com/podbox-sh/podcue) produces timed, speaker-grouped cues.
+The approach is the same with any tool: get a timed transcript with cue ids, group the voices, label the groups, and write a summary whose paragraphs cite cues with times. Any timed transcript works: a show's own transcript, YouTube captions, a VTT file, or Whisper output.
+
+[podcue](https://github.com/podbox-sh/podcue) is optional. It produces the cues and voice groups, stores the labels and summaries, and checks them. The summary and `labels.json` formats here are podcue's, so the skills work the same with or without it.
 
 To publish to a PodBox feed, follow the PodBox setup skill at https://podbox.sh/skill/setup.md.
 

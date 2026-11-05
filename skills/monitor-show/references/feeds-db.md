@@ -10,8 +10,7 @@ CREATE TABLE feed (
   name TEXT NOT NULL,
   type TEXT NOT NULL CHECK (type IN ('rss', 'youtube')),
   url TEXT NOT NULL,
-  last_poll TEXT,
-  latest_episode TEXT
+  last_poll TEXT
 );
 
 CREATE TABLE episode (
@@ -21,6 +20,7 @@ CREATE TABLE episode (
   published TEXT,
   audio_url TEXT,
   audio_bytes INTEGER,
+  episode_id TEXT,
   state TEXT NOT NULL DEFAULT 'new' CHECK (state IN ('new', 'skipped', 'done')),
   PRIMARY KEY (feed_id, guid)
 );
@@ -30,11 +30,13 @@ CREATE TABLE episode (
 
 `type` is `rss` or `youtube`. For `rss`, `url` is the feed URL. For `youtube`, it is the channel, playlist, or page URL.
 
-Store times as UTC `YYYY-MM-DDTHH:MM:SSZ`. `last_poll` is the time of the last poll, or null before the first. `latest_episode` is the newest episode time seen in that poll, or null when the feed gives no times.
+Store times as UTC `YYYY-MM-DDTHH:MM:SSZ`. `last_poll` is the time of the last poll, or null before the first.
 
 `guid` is how you recognize the same item on the next poll. For `rss`, use the item's `<guid>`. If the item has none, use the enclosure URL. For `youtube`, use the video id. The primary key makes a second insert of the same item fail, so use `INSERT OR IGNORE`.
 
 `audio_url` and `audio_bytes` come from the RSS `<enclosure>` `url` and `length`. For `youtube`, leave both null and use the page URL.
+
+`episode_id` is the `episodeId` in the episode's summary file: podcue's `ep_…` id, or the id you chose. The summary file holds no show, title, date or link, so this row is where they live.
 
 `state` is `new` until the episode is handled, `skipped` when the user chose not to process it, and `done` after it is handled.
 
@@ -54,7 +56,7 @@ For `youtube`, list the recent videos. Ask the user before you install yt-dlp; `
 yt-dlp --flat-playlist --playlist-end 20 --print "%(id)s %(title)s" "<url>"
 ```
 
-Then set `last_poll` to the current UTC time, and `latest_episode` to the newest item time in the response.
+Then set `last_poll` to the current UTC time.
 
 For each item, insert a row with `INSERT OR IGNORE`. The rows you just inserted are the new episodes.
 
