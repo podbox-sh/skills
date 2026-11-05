@@ -38,7 +38,7 @@ Store times as UTC `YYYY-MM-DDTHH:MM:SSZ`. `last_poll` is the time of the last p
 
 `episode_id` is the `episodeId` in the episode's summary file: podcue's `ep_…` id, or the id you chose. The summary file holds no show, title, date or link, so this row is where they live.
 
-`state` is `new` until the episode is handled, `skipped` when the user chose not to process it, and `done` after it is handled.
+`state` is `new` until the episode is handled, `skipped` when the user chose not to process it or there was no usable transcript ([SKILL.md](../SKILL.md#steps), step 6), and `done` after it is handled.
 
 ## Find a feed
 

@@ -11,7 +11,7 @@ The input is usually a summary file from [summarize-episode](../summarize-episod
 
 ## Steps
 
-1. Draft the script from the source text. Keep every hedge and every "he gives no reason" from the source. Do not add facts, and do not state anything more surely than the source does.
+1. Draft the script from the source text. Keep every hedge and every "he gives no reason" from the source, and a quote-cited summary's note that it can't be checked against timestamps. Do not add facts, and do not state anything more surely than the source does.
 2. Edit it by the Orwell rules in [references/orwell.md](references/orwell.md).
 3. Shape it for the ear by [references/pacing.md](references/pacing.md): short sentences, signposts, no lists or tables, numbers rounded and written as words.
 4. Respell the words the voice will get wrong, by [references/respelling.md](references/respelling.md).

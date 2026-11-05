@@ -39,7 +39,7 @@ paragraphs:
 
 ## Keys
 
-The file has exactly these keys. Any other key is an error.
+The file has exactly these keys. Any other key is an error. A summary of an untimed transcript uses the [quote-cited variant](#quote-cited-summaries) instead.
 
 - `version`: the number `1`.
 - `episodeId`: the episode. With podcue, its `ep_…` id. Without podcue, a stable id you choose for the episode and keep with it.
@@ -61,10 +61,41 @@ Use the ids the transcript gives its cues: podcue's are `c0001`, `c0002`, …, a
 
 ## Labels
 
-Speaker names are not in the summary file. They go in a `labels.json` next to the transcript, written by [label-speakers](../../label-speakers/SKILL.md), or taken from the transcript when it names its speakers ([the transcript ladder](../SKILL.md#the-transcript)):
+Speaker names are not in the summary file. They go in a `labels.json` next to the transcript, written by [label-speakers](../../label-speakers/SKILL.md), or taken from the transcript when it names its speakers ([the transcript](../SKILL.md#the-transcript), case (a)):
 
 ```json
 {"groups": [{"groupId": "gc0001", "label": "Ana Ruiz"}, {"groupId": "gc0003", "label": "Tom Lee"}]}
 ```
 
 Every voice group a paragraph cites needs an entry there. Cues with no group (`ungrouped` in podcue) need none. A cited group labeled `undetermined` is allowed: `podcue check` warns about it but passes.
+
+## Quote-cited summaries
+
+A transcript with no times ([tier 3](../SKILL.md#the-transcript)) has no cues to cite. Its summary file sets `citations: quotes`, and each paragraph has `quotes` in place of `cues`, `startMs` and `endMs`. All other keys are as above. podcue does not read or check this variant.
+
+```yaml
+version: 1
+episodeId: city-desk-2026-11-03
+citations: quotes
+summary: >-
+  Ana says the city allows too few new homes near jobs, and she thinks that
+  is probably the main reason rents rise. This summary comes from a
+  transcript with no times, so it can't be checked against timestamps.
+paragraphs:
+  - index: 1
+    part: claim
+    text: >-
+      Tom Lee welcomes Ana, and she answers that the city allows too few new
+      homes near jobs. She thinks this is "probably the main reason rents
+      rise." She gives no figures.
+    quotes:
+      - "Welcome, Ana."
+      - "The city allows too few new homes near jobs."
+      - "That is probably the main reason rents rise."
+```
+
+- `citations`: the word `quotes`. It marks the file as quote-cited.
+- `quotes`: a non-empty list of short passages, each copied word for word from the transcript, in transcript order. No passage twice.
+- `summary`: says once that it can't be checked against timestamps, so the spoken script says it too.
+
+There is no `labels.json`. Name speakers in the text only as [the transcript](../SKILL.md#the-transcript) allows.
