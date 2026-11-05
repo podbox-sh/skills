@@ -44,6 +44,16 @@ Store times as UTC `YYYY-MM-DDTHH:MM:SSZ`. `last_poll` is the time of the last p
 
 When the user names a show but not a feed, search for its RSS feed. The show's site, Apple Podcasts, and podcast directories usually link it. Check that the URL returns RSS with `<item>` elements before you store it.
 
+## Find the RSS item for an episode link
+
+When the user gives a podcast episode page, such as an Apple Podcasts, Spotify, Overcast or Pocket Casts link or a page on the show's site, find the episode's `<item>` in the show's feed. It gives the `<enclosure>` audio and any `<podcast:transcript>`.
+
+1. Find the show's feed. Look for an RSS link on the page or the show's site. For an Apple Podcasts link, take the show id after `id` in the URL and read `feedUrl` from `https://itunes.apple.com/lookup?id=<id>`. Otherwise search a podcast directory for the show.
+2. Check that the URL returns RSS with `<item>` elements.
+3. Match the episode by `<guid>`, by enclosure URL, or by title and date.
+
+Some shows, such as Spotify-only ones, have no public feed. When you find no feed or no matching item, go on without one.
+
 ## Poll
 
 Read every row in `feed`.

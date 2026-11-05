@@ -16,8 +16,10 @@ You need `sqlite3` (or any SQLite client). To fetch audio you also need Node.js 
 3. On the first poll of a new feed, ask the user how many recent episodes to process. Mark the rest `skipped`.
 4. For each episode in state `new`, look for a timed transcript, in this order:
    1. The show's own transcript, often linked from the episode page.
-   2. The video's captions. For YouTube: `yt-dlp --skip-download --write-subs --write-auto-subs --sub-format vtt -o "<directory>/captions" "<page-url>"`.
-   3. The RSS item's `<podcast:transcript>` link (the Podcasting 2.0 namespace). Its `type` may be `text/vtt`, `application/x-subrip`, `application/json` or `text/html`.
+   2. The RSS item's `<podcast:transcript>` link (the Podcasting 2.0 namespace). Its `type` may be `text/vtt`, `application/x-subrip`, `application/json` or `text/html`.
+   3. The video's captions. For YouTube: `yt-dlp --skip-download --write-subs --write-auto-subs --sub-format vtt -o "<directory>/captions" "<page-url>"`.
+
+   For a YouTube or other video source, try its captions first.
 
    A timed transcript has the spoken words and a time for each line or paragraph. Keep an untimed one, such as an HTML page, for step 6. Show notes and the episode description are not a transcript. Save it outside any git repository.
 5. When there is no timed transcript and you can run a transcription tool, download the audio and write the WAV as in [references/fetch-audio.md](references/fetch-audio.md). Then transcribe it with any tool that gives timed cues. Optional: `uvx podcue start <wav>` (https://github.com/podbox-sh/podcue) does this and groups the voices.

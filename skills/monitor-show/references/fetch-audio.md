@@ -18,7 +18,7 @@ Pass the enclosure `length` as `expected-bytes` when the feed gives one. The scr
 
 ## From YouTube or another page
 
-When the episode has no feed audio URL, or the script fails, use yt-dlp. Ask the user before you install it; `uvx yt-dlp` runs it without installing. The printed line is the download path.
+When the episode is a video, has no feed audio URL, or the script fails, use yt-dlp. For a podcast episode link, first try to find its feed audio URL as in [feeds-db.md](feeds-db.md#find-the-rss-item-for-an-episode-link). Ask the user before you install it; `uvx yt-dlp` runs it without installing. The printed line is the download path.
 
 ```
 yt-dlp -x --no-playlist --print after_move:filepath -o "<directory>/download.%(ext)s" "<page-url>"
