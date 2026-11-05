@@ -5,13 +5,21 @@ description: Summarize a podcast episode, or any timed transcript, into paragrap
 
 # Summarize an episode
 
-The input is a timed transcript: each cue has an id or a start time, an end time, its text, and a voice group. YouTube captions, a VTT file, Whisper output, and a show's own transcript all work. Optional: `uvx podcue start <audio>` (https://github.com/podbox-sh/podcue) produces cues with ids and voice groups, and stores the summary for you. Its [Agent workflow](https://github.com/podbox-sh/podcue#agent-workflow) is the shortest path.
+The input is a timed transcript: each cue has an id or a start time, an end time, and its text. When a transcript gives only start times, a cue ends where the next one starts. YouTube captions, a VTT file, Whisper output, and a show's own transcript all work.
 
-The output is one summary file in the format in [references/summary-format.md](references/summary-format.md). It is the same format podcue writes.
+The output is one summary file in the format in [references/summary-format.md](references/summary-format.md). It is the same format [podcue](https://github.com/podbox-sh/podcue) writes.
+
+## The transcript
+
+Use the best case you have:
+
+- **(a) The transcript names its speakers**, such as a show's own transcript with "ANA RUIZ:" lines. Use each name as the group id and as its label: `{"groupId": "Ana Ruiz", "label": "Ana Ruiz"}` in `labels.json`. Skip label-speakers.
+- **(b) The transcript has anonymous voice groups**, such as podcue's `gc0001` or another tool's `SPEAKER_00`. Label them first with [label-speakers](../label-speakers/SKILL.md).
+- **(c) The transcript has no speaker info**, such as YouTube captions or a plain transcript. Put every cue in the one group `ungrouped`. It needs no label, so there is no `labels.json`. In the text, name a speaker only when the cues make it plain, such as a self-introduction or a host handoff ("Welcome, Ana", then the answer). Otherwise write "the hosts", or say the speaker is unclear. Never guess a speaker to fill a citation.
+- **(d) Audio only.** Transcribe it with any tool that gives timed cues, then go on at (b), or at (c) if the tool gives no voice groups. Optional: `uvx podcue start <audio>` gives cues with ids and voice groups and stores the summary for you. Its [Agent workflow](https://github.com/podbox-sh/podcue#agent-workflow) is the shortest path.
 
 ## Before you write
 
-- The voice groups need labels. If the transcript has only ids such as `gc0001` or `SPEAKER_00`, label them first with the [label-speakers](../label-speakers/SKILL.md) skill.
 - Know the request: what the user asked you to summarize. With no narrower request, it is the whole episode.
 - Read every cue. Read a long transcript in pages (with podcue, `podcue cues <episodeId> --limit 200 --after <last cue id>`). Do not skip a page.
 

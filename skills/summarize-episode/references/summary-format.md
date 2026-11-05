@@ -61,7 +61,7 @@ Use the ids the transcript gives its cues: podcue's are `c0001`, `c0002`, …, a
 
 ## Labels
 
-Speaker names are not in the summary file. They go in a `labels.json` next to the transcript, written by [label-speakers](../../label-speakers/SKILL.md):
+Speaker names are not in the summary file. They go in a `labels.json` next to the transcript, written by [label-speakers](../../label-speakers/SKILL.md), or taken from the transcript when it names its speakers ([the transcript ladder](../SKILL.md#the-transcript)):
 
 ```json
 {"groups": [{"groupId": "gc0001", "label": "Ana Ruiz"}, {"groupId": "gc0003", "label": "Tom Lee"}]}

@@ -1,5 +1,7 @@
 # Download the audio and write the WAV
 
+Do this only when the episode has no readable transcript and you can transcribe it ([SKILL.md](../SKILL.md#steps), steps 4 and 5).
+
 Download the episode audio, then write a 16-bit mono 16 kHz WAV for transcription. Write both outside any git repository. Delete the download after the WAV exists.
 
 ## From a podcast feed

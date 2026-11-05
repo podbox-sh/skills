@@ -9,7 +9,7 @@ A diarized transcript groups cues that sound like one voice. The group ids are w
 
 Any timed transcript with voice groups works. Optional: `uvx podcue start <audio>` (https://github.com/podbox-sh/podcue) produces them. With podcue, read the cues in pages with `podcue cues <episodeId> --limit 200 --after <last cue id>`, and one voice with `podcue cues <episodeId> --group-id <groupId>`. A high `nearestCosine` hints that two groups are one person.
 
-If the transcript already names its speakers, as a show's own transcript often does, check a few cues per name and skip the rest of this skill.
+This skill is for case (b) of the [transcript ladder](../summarize-episode/SKILL.md#the-transcript): anonymous voice groups. A transcript that names its speakers, or has no speaker info, does not need it.
 
 ## Labels
 
