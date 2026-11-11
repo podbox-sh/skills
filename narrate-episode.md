@@ -1,0 +1,36 @@
+# Speech
+
+Use this page to call `create_speech_episode` well. A recap's narration follows the same writing rules. The recap page is [podbox://skill/create-podcast-recap.md](podbox://skill/create-podcast-recap.md).
+
+## Voices
+
+Call `list_speech_presets` for the voices you may name. Generated speech is in English, with one female voice, `american-female-heart`, and one male voice, `american-male-puck`. The text is read literally. An audio file you upload can be in any language. This call cannot.
+
+## Parts and silences
+
+A script is up to 8 parts, in order. A text part is `{text, voice_preset}` and holds at most 50000 characters. A silence part is `{silence_ms}` from 1 to 10000 milliseconds. You can alternate the two voices. The script contains no URLs, markdown, or tables.
+
+It publishes when rendering finishes. Pass a stable `idempotencyKey`. Reusing it returns the same episode, even after it has published. A `replay` reply carries `episode` with the current status, so call `read_episode` rather than resubmit. While narration renders, `read_episode` includes progress. Poll until the episode is published or failed.
+
+## Writing for the ear
+
+Write each word the way people say it, so the voice says it right. The voice reads the characters it is given. This applies to every narrated episode: `create_speech_episode`, local Kokoro, and recap narration.
+
+- Acronyms follow how people say them. A word-like acronym stays as written, such as NASA, NATO, and SCOTUS. One said letter by letter gets spaced letters, such as "F B I" and "U S C". A mixed one is written as said, such as "jay-peg" for JPEG and "C-S-V file".
+- A foreign or unusual name gets a respelling in plain English letters, as close to the real pronunciation as you can get, such as "Shee Jin-ping" for Xi Jinping or "Ann-YESS" for Agnès. This goes only in the narration text. The show notes and episode text keep the real spelling.
+- Numbers, dates, and symbols are written as said: "twenty twenty-six", "three point five percent", and "and" for &.
+- Before publishing, read each proper noun the way the voice would. If reading the letters literally would get it wrong, respell it.
+
+Do not put a URL, markdown, a heading, or a table in the script.
+
+## Credit reservation
+
+The call reserves a credit quote for the narration. It is refused with `insufficientCredits` when spendable credits are below the quote. The final charge is the real narration and file, and it may pass the quote. The episode still publishes. A failed render, or a hold still open after one hour, fails the episode and releases the reservation.
+
+What `account_status` returns, and what to do on a refusal, is in [podbox://skill](podbox://skill).
+
+## Local audio
+
+On a computer, a local voice is normally higher quality and cheaper. Install a model such as Kokoro and the dependencies it needs, generate the file, and publish it with the upload steps in [podbox://skill](podbox://skill). If the system or the person declines the install, use `create_speech_episode`.
+
+A recap built with podcue uses the Kokoro id `am_michael` unless the person asks for another voice. That id is not a `voice_preset`. `create_speech_episode` defaults to `american-male-puck`. The other voice is `american-female-heart`.
