@@ -6,7 +6,7 @@ Narration follows [podbox://skill/narrate-episode.md](podbox://skill/narrate-epi
 
 ## Step 0. Pick a path
 
-With a computer, use [podcue](https://github.com/podbox-sh/podcue) 0.2.2 with the recap extra. Every command is `uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue`. That path is the best quality. It keeps short clips of the original speakers. You need Python 3.12, plus `ffmpeg` and `uv` on PATH. Kokoro 0.9.4 requires Python before 3.13, so the recap extra stays on 3.12. Pin that version on every command. Each command prints one JSON line. An error line is `{"kind":"error"}`.
+With a computer, use [podcue](https://github.com/podbox-sh/podcue) 0.2.3 with the recap extra. Every command is `uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue`. That path is the best quality. It keeps short clips of the original speakers. You need Python 3.12, plus `ffmpeg` and `uv` on PATH. Kokoro 0.9.4 requires Python before 3.13, so the recap extra stays on 3.12. Pin that version on every command. Each command prints one JSON line. An error line is `{"kind":"error"}`.
 
 Without a computer, use web search and a published transcript, then publish narration only. When you deliver, say the quality is lower and there are no original clips.
 
@@ -18,7 +18,7 @@ Select, the plan, and the show notes are the same on every path. Only finding th
 
 Latest means the newest full episode. Skip a short, a clip, a trailer, and a recap cut of the same show.
 
-With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue fetch <URL> --out DIR` on the episode's audio URL. It writes `DIR/audio.wav`. `start` runs on that file.
+With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue fetch <URL> --out DIR` on the episode's audio URL. It writes `DIR/audio.wav`. `start` runs on that file.
 
 Without a computer, search the web for the show and the episode so the narration is about that episode. You do not download the audio.
 
@@ -26,19 +26,21 @@ Without a computer, search the web for the show and the episode so the narration
 
 Use a published transcript first. Look at the feed's own transcript, then the show's site or the episode page. A published transcript is the reading copy. It is fast, and it usually spells names right.
 
-With a computer, always run podcue even when a published transcript exists, so each clip stays on one speaker. Use the published transcript as the reading copy for names and the fact check. Run `uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue start DIR/audio.wav --language <code>`. `start` is idempotent: the same audio returns the same episode id and does not reload the models. Keep the `ep_...` id `start` returns and use it on later commands. Built-in transcription is the default: Whistle for `en`, `de`, `fr`, `es`, `it`, `nl`, and `pl`, and, as an experiment, `ja`, `ko`, and `zh`. The default language is `en`.
+With a computer, always run podcue even when a published transcript exists, so each clip stays on one speaker. Use the published transcript as the reading copy for names and the fact check. Run `uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue start DIR/audio.wav --language <code>`. `start` is idempotent: the same audio returns the same episode id and does not reload the models. Keep the `ep_...` id `start` returns and use it on later commands. Built-in transcription is the default: Whistle for `en`, `de`, `fr`, `es`, `it`, `nl`, and `pl`, and, as an experiment, `ja`, `ko`, and `zh`. The default language is `en`.
 
-You may run your own speech-to-text and pass it with `uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue start DIR/audio.wav --transcript FILE`. That skips the built-in model. Speaker grouping and cue building still run. FILE is `{"language": "<code>", "segments": [{"startMs", "endMs", "text", "words"?: [{startMs, endMs, text}]}]}`. `language` is required unless `--language` is passed. Any code is accepted. A mismatch is an error.
+You may run your own speech-to-text and pass it with `uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue start DIR/audio.wav --transcript FILE`. That skips the built-in model. Speaker grouping and cue building still run. FILE is `{"language": "<code>", "segments": [{"startMs", "endMs", "text", "words"?: [{startMs, endMs, text}]}]}`. `language` is required unless `--language` is passed. Any code is accepted. A mismatch is an error.
 
-Then page the cues with `uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue cues <episodeId> --limit 200`, and `--after` the last cue id, until the page is short. Each cue is `{id, startMs, endMs, text, groupId, speaker}`. `speaker` holds the group id until the groups are labeled, then the assigned label, or `uncertain` or `mixed`. The one-speaker check in `build` uses it and flags a clip that contains `uncertain` or `mixed`. Then name the groups with `label-groups`, in the next section.
+Then page the cues with `uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue cues <episodeId> --limit 200`, and `--after` the last cue id, until the page is short. Each cue is `{id, startMs, endMs, text, groupId, speaker}`. `speaker` holds the group id until the groups are labeled, then the assigned label, or `uncertain` or `mixed`. The one-speaker check in `build` uses it and flags a clip that contains `uncertain` or `mixed`. Then name the groups with `label-groups`, in the next section.
 
 Without a computer, you need a published transcript. If there is none, say so and do not invent the episode.
 
 ## Multi-speaker shows
 
-With a computer, cues use a `groupId` until you name the voice. Read one voice with `uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue cues <episodeId> --limit 200 --group-id <groupId>`. Then name the voices:
+With a computer, cues use a `groupId` until you name the voice. Read one voice with `uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue cues <episodeId> --limit 200 --group-id <groupId>`. Then name the voices:
 
-`uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue label-groups <episodeId> '[{"groupId":"gc0001","label":"Ada Lovelace"}]'`
+`uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue label-groups <episodeId> '[{"groupId":"gc0001","label":"Ada Lovelace"}]'`
+
+An entry `{"fromCue":"c0100","toCue":"c0180","label":"quote"}` labels every group whose cues all fall inside that inclusive window. Use it when a montage or a countdown splits into many tiny groups. A group with any cue outside the window is left alone. A per-group entry still works and overrides a range.
 
 Send only the groups you are changing. A label is a person's name, `undetermined`, `quote` (a played clip), or `ending`. Stop when `labeledShare` is about 0.95, which means about 95% of speaking time has a real speaker label. `labeledShare` counts only real speaker labels, not `quote`, `ending`, or `undetermined`. `undeterminedShare` is reported separately. Map the names before you select. Take each clip from one labeled group, across consecutive cues.
 
@@ -102,7 +104,7 @@ Write `script.json` for `podcue build`. It holds narration segments and clips, i
 
 ## Build
 
-With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.2" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then publish `recap.mp3` with `hold_episode` and `complete_episode`. Follow the Upload section of [podbox://skill](podbox://skill).
+With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.3" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then publish `recap.mp3` with `hold_episode` and `complete_episode`. Follow the Upload section of [podbox://skill](podbox://skill).
 
 Without a computer, do not cut clips. Write the narration from the published transcript and publish it with `create_speech_episode`. It defaults to `american-male-puck`. Follow [podbox://skill/narrate-episode.md](podbox://skill/narrate-episode.md). When you deliver, say the quality is lower and there are no original clips.
 
