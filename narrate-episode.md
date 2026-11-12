@@ -16,10 +16,10 @@ It publishes when rendering finishes. Pass a stable `idempotencyKey`. Reusing it
 
 Write each word the way people say it, so the voice says it right. The voice reads the characters it is given. This applies to every narrated episode: `create_speech_episode`, local Kokoro, and recap narration.
 
-- Acronyms follow how people say them. A word-like acronym stays as written, such as NASA, NATO, and SCOTUS. One said letter by letter gets spaced letters, such as "F B I" and "U S C". A mixed one is written as said, such as "jay-peg" for JPEG and "C-S-V file".
-- A foreign or unusual name gets a respelling in plain English letters, as close to the real pronunciation as you can get, such as "Shee Jin-ping" for Xi Jinping or "Ann-YESS" for Agnès. This goes only in the narration text. The show notes and episode text keep the real spelling.
+- Acronyms follow how people say them. A word-like acronym stays as written, such as NASA, NATO, and SCOTUS. One said letter by letter gets spaced letters, such as "F B I" and "U S C". Write "AI" or "A.I.", not "A I". Spaced letters run into the next word. A mixed one is written as said, such as "jay-peg" for JPEG and "C-S-V file".
+- Write a name in plain spelling, such as "Calacanis". Respell it only when a test listen is wrong, as one plain word, not hyphenated stress capitals such as "Cal-uh-KAH-nis". A respelling goes only in the narration. Show notes and episode text keep the real spelling.
 - Numbers, dates, and symbols are written as said: "twenty twenty-six", "three point five percent", and "and" for &.
-- Before publishing, read each proper noun the way the voice would. If reading the letters literally would get it wrong, respell it.
+- Before publishing, listen to each proper noun. Leave a name that already sounds right.
 
 Do not put a URL, markdown, a heading, or a table in the script.
 
