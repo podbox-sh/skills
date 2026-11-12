@@ -1,6 +1,6 @@
 # Episode cover
 
-Set an episode cover with `set_episode_cover` when you can make a picture. If you cannot, skip it. Do not ask the person to upload one. You may follow an aesthetic the person asks for. An episode without its own picture keeps the show cover. When the show has none, the episode keeps the PodBox default. The show cover is [podbox://skill/make-show-cover.md](podbox://skill/make-show-cover.md).
+Set an episode cover with `set_episode_cover` when you can make a picture. If you cannot, skip it. Do not ask the person to upload one. You may follow an aesthetic the person asks for. An episode without its own picture keeps the show cover. When the show has none, the episode keeps the PodBox default. The show cover is [make-show-cover.md](make-show-cover.md).
 
 ## One picture per type
 

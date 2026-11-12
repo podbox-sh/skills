@@ -2,7 +2,7 @@
 
 A recap is one private-feed episode about another podcast episode. It plays clips of the speakers, with narration between them. Quote a moment when hearing them say it beats a summary. These are someone else's work, so keep the clips short, usually under 20 seconds.
 
-Narration follows [podbox://skill/narrate-episode.md](podbox://skill/narrate-episode.md). A finished mix is published from the Upload section of [podbox://skill](podbox://skill).
+Narration follows [narrate-episode.md](narrate-episode.md). A finished mix is published from the Upload section of [index.md](index.md).
 
 ## Step 0. Pick a path
 
@@ -68,7 +68,7 @@ Quote the moment where hearing them say it beats hearing us summarize it. That i
 
 Narration introduces the episode (who is on it, the format, and the main topics; preview only the clip points), bridges into each clip, and closes. Aim for 5 to 8 minutes. If the episode is under 20 minutes, aim for 3 to 5 minutes and 4 to 5 clips. Weave each glossed point into the bridge beside the related clip, in episode order. Do not save the glosses for a list at the end, and do not open on one. Use only facts stated in the episode. Add no outside background, even a date you are sure is true. Do not repeat a clip verbatim.
 
-Write the narration the way [podbox://skill/narrate-episode.md](podbox://skill/narrate-episode.md) describes under Writing for the ear, including how each word is written the way people say it. Do not put a URL or markdown in the narration.
+Write the narration the way [narrate-episode.md](narrate-episode.md) describes under Writing for the ear, including how each word is written the way people say it. Do not put a URL or markdown in the narration.
 
 ### Bridges
 
@@ -104,9 +104,9 @@ Write `script.json` for `podcue build`. It holds narration segments and clips, i
 
 ## Build
 
-With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.6" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then publish `recap.mp3` with `hold_episode` and `complete_episode`. Follow the Upload section of [podbox://skill](podbox://skill).
+With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.6" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then publish `recap.mp3` with `hold_episode` and `complete_episode`. Follow the Upload section of [index.md](index.md).
 
-Without a computer, do not cut clips. Write the narration from the published transcript and publish it with `create_speech_episode`. It defaults to `american-male-puck`. Follow [podbox://skill/narrate-episode.md](podbox://skill/narrate-episode.md). When you deliver, say the quality is lower and there are no original clips.
+Without a computer, do not cut clips. Write the narration from the published transcript and publish it with `create_speech_episode`. It defaults to `american-male-puck`. Follow [narrate-episode.md](narrate-episode.md). When you deliver, say the quality is lower and there are no original clips.
 
 ## Show notes
 

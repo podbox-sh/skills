@@ -1,0 +1,20 @@
+{
+  "name": "podbox",
+  "interface": {
+    "displayName": "PodBox"
+  },
+  "plugins": [
+    {
+      "name": "podbox",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

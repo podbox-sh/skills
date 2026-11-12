@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "podbox": {
+      "type": "streamable-http",
+      "url": "https://api.podbox.sh/mcp/v1"
+    }
+  }
+}

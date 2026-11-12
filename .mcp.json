@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "podbox": {
+      "type": "http",
+      "url": "https://api.podbox.sh/mcp/v1"
+    }
+  }
+}

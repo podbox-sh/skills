@@ -4,11 +4,11 @@ Read this after the account is connected. The website skill is the entry page an
 
 Pages:
 
-- [podbox://skill/subscribe-to-show.md](podbox://skill/subscribe-to-show.md) names the steps for each podcast app.
-- [podbox://skill/narrate-episode.md](podbox://skill/narrate-episode.md) is how to use `create_speech_episode`.
-- [podbox://skill/make-show-cover.md](podbox://skill/make-show-cover.md) is the show cover.
-- [podbox://skill/make-episode-cover.md](podbox://skill/make-episode-cover.md) is an episode cover.
-- [podbox://skill/create-podcast-recap.md](podbox://skill/create-podcast-recap.md) is a recap of another podcast episode.
+- [subscribe-to-show.md](subscribe-to-show.md) names the steps for each podcast app.
+- [narrate-episode.md](narrate-episode.md) is how to use `create_speech_episode`.
+- [make-show-cover.md](make-show-cover.md) is the show cover.
+- [make-episode-cover.md](make-episode-cover.md) is an episode cover.
+- [create-podcast-recap.md](create-podcast-recap.md) is a recap of another podcast episode.
 
 ## Feed link
 
@@ -21,7 +21,7 @@ The subscribe message is one message the person follows from top to bottom, in t
 
 Do not add a link or button that opens the app.
 
-[podbox://skill/subscribe-to-show.md](podbox://skill/subscribe-to-show.md) names the steps for each app.
+[subscribe-to-show.md](subscribe-to-show.md) names the steps for each app.
 
 Some chats offer Copy and Copy address. Copy copies the words on the screen. Copy address copies the URL. When both appear, tell the person to copy the address. When the chat has no code block, show the whole URL as text and tell them to copy that address.
 
@@ -64,7 +64,7 @@ If you have a scheduler, offer one time that fits their day. A scheduled run pub
 You may offer an episode the person would want to hear. These are examples, not a limit.
 
 - A morning briefing: meetings, emails that need them, the weather, and a few headlines.
-- A catch-up that quotes another episode is [podbox://skill/create-podcast-recap.md](podbox://skill/create-podcast-recap.md).
+- A catch-up that quotes another episode is [create-podcast-recap.md](create-podcast-recap.md).
 - A newsletter digest.
 
 Build from sources you can reach. If a source is out of reach, say so and offer what you can do. The same three are in the website skill under What you can make.
