@@ -18,7 +18,7 @@ Select, the plan, and the show notes are the same on every path. Only finding th
 
 Latest means the newest full episode. Skip a short, a clip, a trailer, and a recap cut of the same show.
 
-With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.1" podcue fetch <URL> --out DIR` on the episode's audio URL. It writes `DIR/audio.wav`. Keep the episode id it returns. `start` runs on that file.
+With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.1" podcue fetch <URL> --out DIR` on the episode's audio URL. It writes `DIR/audio.wav`. `start` runs on that file.
 
 Without a computer, search the web for the show and the episode so the narration is about that episode. You do not download the audio.
 
@@ -26,7 +26,7 @@ Without a computer, search the web for the show and the episode so the narration
 
 Use a published transcript first. Look at the feed's own transcript, then the show's site or the episode page. A published transcript is the reading copy. It is fast, and it usually spells names right.
 
-With a computer, always run podcue even when a published transcript exists, so each clip stays on one speaker. Use the published transcript as the reading copy for names and the fact check. Run `uvx --python 3.12 --from "podcue[recap]==0.2.1" podcue start DIR/audio.wav --language <code>`. `start` is idempotent: the same audio returns the same episode id and does not reload the models. Built-in transcription is the default: Whistle for `en`, `de`, `fr`, `es`, `it`, `nl`, and `pl`, and, as an experiment, `ja`, `ko`, and `zh`. The default language is `en`.
+With a computer, always run podcue even when a published transcript exists, so each clip stays on one speaker. Use the published transcript as the reading copy for names and the fact check. Run `uvx --python 3.12 --from "podcue[recap]==0.2.1" podcue start DIR/audio.wav --language <code>`. `start` is idempotent: the same audio returns the same episode id and does not reload the models. Keep the `ep_...` id `start` returns and use it on later commands. Built-in transcription is the default: Whistle for `en`, `de`, `fr`, `es`, `it`, `nl`, and `pl`, and, as an experiment, `ja`, `ko`, and `zh`. The default language is `en`.
 
 You may run your own speech-to-text and pass it with `uvx --python 3.12 --from "podcue[recap]==0.2.1" podcue start DIR/audio.wav --transcript FILE`. That skips the built-in model. Speaker grouping and cue building still run. FILE is `{"language": "<code>", "segments": [{"startMs", "endMs", "text", "words"?: [{startMs, endMs, text}]}]}`. `language` is required unless `--language` is passed. Any code is accepted. A mismatch is an error.
 
@@ -62,7 +62,7 @@ For each clip, pick a moment that starts at the beginning of the thought, is viv
 
 Do this the same way on every path. Write the segments in episode order.
 
-Quote the moment where hearing them say it beats hearing us summarize it. That is a claim in their own words, the emotion or emphasis behind it, or a distinctive phrasing. Narration would flatten that. Start where that moment starts, and stop once it lands, so no bridge has to explain it. Length follows from that. Most clips come out at 10 to 20 seconds, but a story can run longer and a sharp line can be 5 seconds. Usually under 20 seconds. Trim setup and repetition. These are someone else's work, so keep them short. Prefer the guest, and give every host who drives the conversation at least one clip, such as a question that sets up a story, a pushback, or a reaction that moves things along. A recap with only the guest sounds like a monologue. Each clip is one speaker and starts and ends on a sentence boundary. Leave out the other speaker's interjections. Name the speaker correctly.
+Quote the moment where hearing them say it beats hearing us summarize it. That is a claim in their own words, the emotion or emphasis behind it, or a distinctive phrasing. Narration would flatten that. Start where that moment starts, and stop once it lands, so no bridge has to explain it. Length follows from that. As a soft guide, roughly 10 to 20 seconds. A story can run longer and a sharp line can be 5 seconds. Usually under 20 seconds. Trim setup and repetition. These are someone else's work, so keep them short. Prefer the guest, and give every host who drives the conversation at least one clip, such as a question that sets up a story, a pushback, or a reaction that moves things along. The host who drives the conversation is the person asking most of the questions in the stretch being recapped. A co-host present for only part of the episode still counts as host for that part. A recap with only the guest sounds like a monologue. Each clip is one speaker and starts and ends on a sentence boundary. Leave out the other speaker's interjections. Name the speaker correctly.
 
 Narration introduces the episode (who is on it, the format, and the main topics; preview only the clip points), bridges into each clip, and closes. Aim for 5 to 8 minutes. If the episode is under 20 minutes, aim for 3 to 5 minutes and 4 to 5 clips. Weave each glossed point into the bridge beside the related clip, in episode order. Do not save the glosses for a list at the end, and do not open on one. Use only facts stated in the episode. Add no outside background, even a date you are sure is true. Do not repeat a clip verbatim.
 
@@ -98,11 +98,11 @@ Write `script.json` for `podcue build`. It holds narration segments and clips, i
 }
 ```
 
-`voice` is a Kokoro id. It is optional and defaults to `am_michael`, unless the person asks for another voice. A narration may set its own `voice`. `start` and `end` are seconds (`"90.5"`) or `[h:]mm:ss[.s]` (`"40:43.5"`). Each clip names a `speaker` and spans consecutive cues from one labeled group. Start where the moment starts and stop once it lands. Usually under 20 seconds. Trim setup and repetition. These are someone else's work, so keep them short.
+`voice` is a Kokoro id. It is optional and defaults to `am_michael`, unless the person asks for another voice. A narration may set its own `voice`. `start` and `end` are seconds (`"90.5"`) or `[h:]mm:ss[.s]` (`"40:43.5"`). Each clip names a `speaker` and spans consecutive cues from one labeled group. Start where the moment starts and stop once it lands. Roughly 10 to 20 seconds is a soft guide. Usually under 20 seconds. Trim setup and repetition. These are someone else's work, so keep them short.
 
 ## Build
 
-With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.1" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. Then publish `recap.mp3` with `hold_episode` and `complete_episode`. Follow the Upload section of [podbox://skill](podbox://skill).
+With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.1" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then publish `recap.mp3` with `hold_episode` and `complete_episode`. Follow the Upload section of [podbox://skill](podbox://skill).
 
 Without a computer, do not cut clips. Write the narration from the published transcript and publish it with `create_speech_episode`. It defaults to `american-male-puck`. Follow [podbox://skill/narrate-episode.md](podbox://skill/narrate-episode.md). When you deliver, say the quality is lower and there are no original clips.
 
