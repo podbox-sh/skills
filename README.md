@@ -91,7 +91,7 @@ Grok Bot keeps skills in your private skill library rather than a folder.
 2. Ask your Bot: "Save the PodBox skill from https://github.com/podbox-sh/skills as a private skill."
 3. If a Bot can't find it: Connect apps > connected count next to the title > enable under Private skills.
 
-Want daily podcast recaps without setup? Start from the [Podcast Recap template](https://x.ai/bot/W9oMboiMgenVK_6TKPeAM).
+Want daily podcast recaps without setup? Start from the [Podcast Recap template](https://x.ai/bot/8zwiYFJCqixpGIWDaUX8C).
 
 ### Claude API
 
