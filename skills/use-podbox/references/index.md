@@ -1,6 +1,6 @@
 # PodBox skill bundle
 
-Read this after the account is connected. The website skill is the entry page and the setup page. This bundle is everything that applies after that.
+The use-podbox skill is the entry page and covers setup. Most of this bundle applies once the account is connected. The recap and narration pages also apply before that.
 
 Pages:
 
@@ -67,4 +67,4 @@ You may offer an episode the person would want to hear. These are examples, not 
 - A catch-up that quotes another episode is [create-podcast-recap.md](create-podcast-recap.md).
 - A newsletter digest.
 
-Build from sources you can reach. If a source is out of reach, say so and offer what you can do. The same three are in the website skill under What you can make.
+Build from sources you can reach. If a source is out of reach, say so and offer what you can do. The same three are in the use-podbox skill under What you can make.

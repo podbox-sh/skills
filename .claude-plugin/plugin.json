@@ -1,6 +1,6 @@
 {
   "name": "podbox",
-  "version": "1.0.45600835",
+  "version": "1.0.77940348",
   "description": "Publishes episodes to a private PodBox feed. Installs the use-podbox skill and the production PodBox connector.",
   "author": {
     "name": "PodBox",

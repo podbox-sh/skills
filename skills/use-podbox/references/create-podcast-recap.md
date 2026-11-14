@@ -2,13 +2,13 @@
 
 A recap is one private-feed episode about another podcast episode. It plays clips of the speakers, with narration between them. Quote a moment when hearing them say it beats a summary. These are someone else's work, so keep the clips short, usually under 20 seconds.
 
-Narration follows [narrate-episode.md](narrate-episode.md). A finished mix is published from the Upload section of [index.md](index.md).
+Narration follows [narrate-episode.md](narrate-episode.md). Deliver, at the end of this page, says where the finished recap goes.
 
 ## Step 0. Pick a path
 
 With a computer, use [podcue](https://github.com/podbox-sh/podcue) 0.2.6 with the recap extra. Every command is `uvx --python 3.12 --from "podcue[recap]==0.2.6" podcue`. That path is the best quality. It keeps short clips of the original speakers. You need Python 3.12, plus `ffmpeg` and `uv` on PATH. Kokoro 0.9.4 requires Python before 3.13, so the recap extra stays on 3.12. Pin that version on every command. Each command prints one JSON line. An error line is `{"kind":"error"}`.
 
-Without a computer, use web search and a published transcript, then publish narration only. When you deliver, say the quality is lower and there are no original clips.
+Without a computer, use web search and a published transcript, then publish narration only. When you deliver, say the quality is lower and there are no original clips. This path needs a connected PodBox account, because `create_speech_episode` makes the audio.
 
 Then, on either path: find the episode, get a transcript, select, plan, build, and deliver.
 
@@ -104,7 +104,7 @@ Write `script.json` for `podcue build`. It holds narration segments and clips, i
 
 ## Build
 
-With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.6" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then publish `recap.mp3` with `hold_episode` and `complete_episode`. Follow the Upload section of [index.md](index.md).
+With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.6" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then deliver `recap.mp3` as Deliver says.
 
 Without a computer, do not cut clips. Write the narration from the published transcript and publish it with `create_speech_episode`. It defaults to `american-male-puck`. Follow [narrate-episode.md](narrate-episode.md). When you deliver, say the quality is lower and there are no original clips.
 
@@ -117,3 +117,11 @@ Do this the same way on every path. The show notes are the episode description. 
 - One footer line for the disclosure. When the episode has clips, use "AI-narrated summary with clips from the original episode." When it is narration only, use "AI-narrated summary of the original episode."
 
 Leave process notes, per-clip attributions, dropped points, and caveats out of the show notes. Put those in the chat: whether the transcript was published or from podcue, that the timestamps refer to the source audio, any inferred speaker labels, and any claim you cut. On the path without a computer, say the quality is lower. Offer the text of the narration if the person wants it.
+
+## Deliver
+
+With a computer and PodBox connected, publish `recap.mp3` with `hold_episode` and `complete_episode`, with the show notes as the description. Follow the Upload section of [index.md](index.md).
+
+With a computer and PodBox not connected, do not sign in first. Send `recap.mp3` as a file in the chat, with the show notes and the chat notes above. If the chat cannot take a file, say where the file is and how the person can get it, such as a download or copy step their setup supports. Then offer once, in one short line, a private PodBox feed (https://podbox.sh) so new episodes show up in their podcast app. Publish to the feed only once they accept and the account is connected.
+
+Without a computer, `create_speech_episode` publishes the narration, as Build says.
