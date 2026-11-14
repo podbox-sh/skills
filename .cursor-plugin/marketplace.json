@@ -4,13 +4,13 @@
     "name": "PodBox"
   },
   "metadata": {
-    "description": "Publishes episodes to a private PodBox feed. Installs the use-podbox, make-podcast-recap, and write-for-the-ear skills and the production PodBox connector."
+    "description": "Publishes episodes to a private PodBox feed. Installs the use-podbox, make-podcast-recap, write-for-the-ear, and pronounce-for-tts skills and the production PodBox connector."
   },
   "plugins": [
     {
       "name": "podbox",
       "source": ".",
-      "description": "Publishes episodes to a private PodBox feed. Installs the use-podbox, make-podcast-recap, and write-for-the-ear skills and the production PodBox connector."
+      "description": "Publishes episodes to a private PodBox feed. Installs the use-podbox, make-podcast-recap, write-for-the-ear, and pronounce-for-tts skills and the production PodBox connector."
     }
   ]
 }

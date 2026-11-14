@@ -8,20 +8,13 @@ Call `list_speech_presets` for the voices you may name. Generated speech is in E
 
 ## Parts and silences
 
-A script is up to 8 parts, in order. A text part is `{text, voice_preset}` and holds at most 50000 characters. A silence part is `{silence_ms}` from 1 to 10000 milliseconds. You can alternate the two voices. The script contains no URLs, markdown, or tables.
+A script is up to 8 parts, in order. A text part is `{text, voice_preset}` and holds at most 50000 characters. A silence part is `{silence_ms}` from 1 to 10000 milliseconds. You can alternate the two voices. The script contains no URLs or tables. The phoneme override in Writing for the ear is the one bracket to keep. Other markdown stays out.
 
 It publishes when rendering finishes. Pass a stable `idempotencyKey`. Reusing it returns the same episode, even after it has published. A `replay` reply carries `episode` with the current status, so call `read_episode` rather than resubmit. While narration renders, `read_episode` includes progress. Poll until the episode is published or failed.
 
 ## Writing for the ear
 
-Write each word the way people say it, so the voice says it right. The voice reads the characters it is given. This applies to every narrated episode: `create_speech_episode`, local Kokoro, and recap narration.
-
-- Acronyms follow how people say them. A word-like acronym stays as written, such as NASA, NATO, and SCOTUS. A letter-by-letter acronym is written solid, such as "FBI", "USC", "AI", and "CSV file", not spaced letters.
-- Write a name in plain spelling, such as "Calacanis". Respell it only when a test listen is wrong, as one plain word, not hyphenated stress capitals such as "Cal-uh-KAH-nis". A respelling goes only in the narration. Show notes and episode text keep the real spelling.
-- In the narration, write numbers as spoken: "four hundred thousand" not "400,000", "two point four percent" not "2.4%", "one point five billion dollars" not "$1.5B", and a year as said, such as "nineteen ninety-six". Show notes and episode text keep digits. A symbol is written as said, such as "and" for &.
-- Before publishing, listen to each proper noun. Leave a name that already sounds right.
-
-Do not put a URL, markdown, a heading, or a table in the script.
+Write each word for the voice by [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md). That page covers numbers, acronyms, and a phoneme override for a name the voice would miss. This applies to every narrated episode: `create_speech_episode`, local Kokoro, and recap narration. Do not put a URL, a heading, or a table in the script.
 
 ## Credit reservation
 
