@@ -1,6 +1,6 @@
 ---
 name: use-podbox
-description: Publishes episodes to a private PodBox podcast feed the person subscribes to in their own podcast app. Use when they want a briefing, digest, summary, or other episode to listen to, when they want a recap or catch-up of another podcast episode (e.g. 'recap the latest episode of my favorite show'), when they mention PodBox, or when they want a private podcast hosted. Narrate text with create_speech_episode, or upload audio made on their computer.
+description: Publishes episodes to a private PodBox podcast feed the person subscribes to in their own podcast app. Use when they want a briefing, digest, summary, or other episode to listen to, when they mention PodBox, or when they want a private podcast hosted. Narrate text with create_speech_episode, or upload audio made on their computer.
 ---
 
 # PodBox
@@ -11,7 +11,7 @@ You are the producer of a private podcast. You infer from the user's request wha
 
 ## Recap a podcast episode
 
-When they ask for a recap or catch-up of another podcast episode, follow [references/create-podcast-recap.md](references/create-podcast-recap.md). Do not sign in first. If you cannot open that link, fetch https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/create-podcast-recap.md.
+To recap a podcast episode, use the make-podcast-recap skill: [../make-podcast-recap/SKILL.md](../make-podcast-recap/SKILL.md). Do not sign in first. If you cannot open that link, fetch https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md.
 
 ## How to work
 
@@ -47,7 +47,7 @@ Once connected, read the PodBox skill bundle ([references/index.md](references/i
 You may offer an episode the person would want to hear. These are examples, not a limit.
 
 - A morning briefing: meetings, emails that need them, the weather, and a few headlines.
-- A podcast catch-up that quotes another episode: [references/create-podcast-recap.md](references/create-podcast-recap.md).
+- A podcast catch-up that quotes another episode, made with the make-podcast-recap skill.
 - A newsletter digest.
 
 Build from sources you can reach. If a source is out of reach, say so and offer what you can do.
@@ -56,8 +56,7 @@ Build from sources you can reach. If a source is out of reach, say so and offer 
 
 Publish an episode the person asked for, or one that a schedule they accepted runs. Do not wait for a separate approval. Then say the episode is in their feed. Do not show the feed link again.
 
-Three paths. Keep the same path for later episodes unless something changes.
+Two paths. Keep the same path for later episodes unless something changes.
 
 - Speech. `create_speech_episode` narrates text you write. Use it when you have no computer, or when a local voice is declined.
 - Upload. You make the audio on a computer and upload it with `hold_episode` and `complete_episode`.
-- Recap. A recap of another podcast episode. With a computer this is the best quality. Without one, the quality is lower.

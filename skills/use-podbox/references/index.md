@@ -1,6 +1,6 @@
 # PodBox skill bundle
 
-The use-podbox skill is the entry page and covers setup. Most of this bundle applies once the account is connected. The recap and narration pages also apply before that.
+The use-podbox skill is the entry page and covers setup. Most of this bundle applies once the account is connected. The narration page also applies before that.
 
 Pages:
 
@@ -8,7 +8,8 @@ Pages:
 - [narrate-episode.md](narrate-episode.md) is how to use `create_speech_episode`.
 - [make-show-cover.md](make-show-cover.md) is the show cover.
 - [make-episode-cover.md](make-episode-cover.md) is an episode cover.
-- [create-podcast-recap.md](create-podcast-recap.md) is a recap of another podcast episode.
+
+Each episode type with its own skill builds on these pages. [../../make-podcast-recap/SKILL.md](../../make-podcast-recap/SKILL.md) is the make-podcast-recap skill, a recap of another podcast episode.
 
 ## Feed link
 
@@ -64,7 +65,7 @@ If you have a scheduler, offer one time that fits their day. A scheduled run pub
 You may offer an episode the person would want to hear. These are examples, not a limit.
 
 - A morning briefing: meetings, emails that need them, the weather, and a few headlines.
-- A catch-up that quotes another episode is [create-podcast-recap.md](create-podcast-recap.md).
+- A catch-up that quotes another episode is the make-podcast-recap skill, [../../make-podcast-recap/SKILL.md](../../make-podcast-recap/SKILL.md).
 - A newsletter digest.
 
 Build from sources you can reach. If a source is out of reach, say so and offer what you can do. The same three are in the use-podbox skill under What you can make.

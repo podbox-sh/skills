@@ -1,6 +1,6 @@
 # Speech
 
-Use this page to call `create_speech_episode` well. A recap's narration follows the same writing rules. The recap page is [create-podcast-recap.md](create-podcast-recap.md).
+Use this page to call `create_speech_episode` well. A recap's narration follows the same writing rules.
 
 ## Voices
 
@@ -33,4 +33,4 @@ What `account_status` returns, and what to do on a refusal, is in [index.md](ind
 
 On a computer, a local voice is normally higher quality and cheaper. Install a model such as Kokoro and the dependencies it needs, generate the file, and publish it with the upload steps in [index.md](index.md). If the system or the person declines the install, use `create_speech_episode`.
 
-A recap built with podcue uses the Kokoro id `am_michael` unless the person asks for another voice. That id is not a `voice_preset`. `create_speech_episode` defaults to `american-male-puck`. The other voice is `american-female-heart`.
+`create_speech_episode` defaults to `american-male-puck`. The other voice is `american-female-heart`.
