@@ -2,14 +2,14 @@
 
 This repository is the PodBox skills and plugin. It is synced from [`podbox-sh/podbox`](https://github.com/podbox-sh/podbox). Do not edit it here. Changes made here will be overwritten.
 
-The skills live under `skills/`. [`skills/use-podbox`](skills/use-podbox/SKILL.md) is the platform skill. Each other folder makes one kind of episode, such as [`skills/make-podcast-recap`](skills/make-podcast-recap/SKILL.md). An agent that is already connected can also read the same pages from the PodBox MCP server.
+The skills live under `skills/`. [`skills/use-podbox`](skills/use-podbox/SKILL.md) is the platform skill. [`skills/make-podcast-recap`](skills/make-podcast-recap/SKILL.md) makes one kind of episode. [`skills/write-for-the-ear`](skills/write-for-the-ear/SKILL.md) is the writing principle. An agent that is already connected can also read the same pages from the PodBox MCP server.
 
 ## Install
 
 PodBox has two parts, and you need both:
 
 1. **The PodBox connector** (MCP server) at `https://api.podbox.sh/mcp/v1`. It gives your agent the tools that publish episodes to your private feed. Sign in when your agent asks.
-2. **The PodBox skills** in this repo (every folder under `skills/`). use-podbox tells your agent how to set up your show, write episodes for the ear, and make covers. make-podcast-recap recaps other podcasts.
+2. **The PodBox skills** in this repo (every folder under `skills/`). use-podbox tells your agent how to set up your show, write episodes for the ear, and make covers. make-podcast-recap recaps other podcasts. write-for-the-ear is how narration is written.
 
 ### Claude (claude.ai, desktop and mobile apps)
 
@@ -17,7 +17,7 @@ Skills need **Code execution and file creation** turned on in **Settings > Capab
 
 **Easiest: add the PodBox plugin.** Customize > Plugins > Add > Add marketplace, enter `podbox-sh/skills`, find PodBox, Add, then open the plugin's Connectors tab and connect PodBox. The plugin is saved to your Claude account, so it also shows up in Cowork and Claude Code.
 
-**Or upload the skills only.** Download each skill's zip, use-podbox.zip and make-podcast-recap.zip, from the [latest release](https://github.com/podbox-sh/skills/releases/latest) (don't unzip). Upload each one with Customize > Skills > + > + Create skill > Upload a skill. Add the connector via https://podbox.sh/resources/guides/claude.
+**Or upload the skills only.** Download each skill's zip, use-podbox.zip, make-podcast-recap.zip, and write-for-the-ear.zip, from the [latest release](https://github.com/podbox-sh/skills/releases/latest) (don't unzip). Upload each one with Customize > Skills > + > + Create skill > Upload a skill. Add the connector via https://podbox.sh/resources/guides/claude.
 
 ### Claude Code
 
@@ -43,7 +43,7 @@ Run `/mcp` and sign in.
 
 ### ChatGPT
 
-- Business, Enterprise, Healthcare and Edu: download each skill's zip, use-podbox.zip and make-podcast-recap.zip, from the [latest release](https://github.com/podbox-sh/skills/releases/latest). Upload each one with Sidebar Plugins > Skills tab > Create > Upload from your computer. ChatGPT scans it first; an admin may need to allow skill uploads.
+- Business, Enterprise, Healthcare and Edu: download each skill's zip, use-podbox.zip, make-podcast-recap.zip, and write-for-the-ear.zip, from the [latest release](https://github.com/podbox-sh/skills/releases/latest). Upload each one with Sidebar Plugins > Skills tab > Create > Upload from your computer. ChatGPT scans it first; an admin may need to allow skill uploads.
 - Other plans: install the PodBox plugin from the Plugins directory. That listing is in review, so this path waits on the ChatGPT plugin listing.
 
 On any plan, connect PodBox via https://podbox.sh/resources/guides/chatgpt if the plugin did not connect it.
@@ -100,4 +100,4 @@ Upload each folder under `skills/` with the Skills API (`/v1/skills`), then list
 
 ### Muse and other agents
 
-Muse doesn't let you install skills. Connect PodBox as a connector and the agent uses its tools directly. For any other agent that reads MCP resources, connecting PodBox is enough: the server serves use-podbox at `podbox://skill` and each episode skill at `podbox://skill/<name>`.
+Muse doesn't let you install skills. Connect PodBox as a connector and the agent uses its tools directly. For any other agent that reads MCP resources, connecting PodBox is enough: the server serves use-podbox at `podbox://skill` and each other skill at `podbox://skill/<name>`.

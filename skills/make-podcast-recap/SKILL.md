@@ -5,13 +5,13 @@ description: Turns a podcast episode or video into a short audio recap that play
 
 # Podcast episode recap
 
-A recap is one private-feed episode about another podcast episode. It plays clips of the speakers, with narration between them. Quote a moment when hearing them say it beats a summary. These are someone else's work, so keep the clips short, usually under 20 seconds.
+A recap is one private-feed episode about another podcast episode. Narration bridges and frames. Clips carry the moments, which is why a recap beats a summary. These are someone else's work, so keep the clips short, usually under 20 seconds.
 
 Do not sign in first. With a computer, make the recap and send it in the chat before any PodBox step.
 
 The use-podbox skill covers the platform: connecting, first run, subscribing, uploading, narration, and covers. This skill links to its pages. If you cannot open one of those links, fetch https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/ followed by the page name, such as narrate-episode.md. The use-podbox entry is https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/SKILL.md.
 
-Narration follows [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md). Deliver, at the end of this page, says where the finished recap goes.
+Narration follows [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md) for how it is written and [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md) for how it is voiced. If you cannot open the write-for-the-ear link, fetch https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md. Deliver, at the end of this page, says where the finished recap goes.
 
 ## Step 0. Pick a path
 
@@ -61,7 +61,7 @@ List the main points. For each one, note the time span, the speaker, and a one-l
 
 Sort every main point into one tier:
 
-- **Clip**, 5 to 7 points. These are the points a listener needs. Each gets narration plus one clip, from distinct turns, never several takes of one idea. If two sides of an argument appear, clip both or gloss one.
+- **Clip**, 5 to 7 points. These are the points a listener needs. Each gets narration plus one clip, from distinct turns, never several takes of one idea. If two sides of an argument appear, clip both.
 - **Gloss**, 2 to 4 points. One or two sentences of narration, no clip and no quote. Weave each one into the bridge next to the clip it relates to. A point with no clean clip lands here.
 - **Drop.** Ads, sponsor reads, promos, intros, theme music, housekeeping, and small talk, plus anything off the core message. Never mention a dropped point.
 
@@ -71,25 +71,65 @@ For each clip, pick a moment that starts at the beginning of the thought, is viv
 
 ## Plan
 
-Do this the same way on every path. Write the segments in episode order.
+Do this the same way on every path. Order the segments by the episode's questions or arguments, as Write the recap for listening says. Within each one, keep episode order.
 
-Quote the moment where hearing them say it beats hearing us summarize it. That is a claim in their own words, the emotion or emphasis behind it, or a distinctive phrasing. Narration would flatten that. Start where that moment starts, and stop once it lands, so no bridge has to explain it. Length follows from that. As a soft guide, roughly 10 to 20 seconds. A story can run longer and a sharp line can be 5 seconds. Usually under 20 seconds. Trim setup and repetition. These are someone else's work, so keep them short. Prefer the guest, and give every host who drives the conversation at least one clip, such as a question that sets up a story, a pushback, or a reaction that moves things along. The host who drives the conversation is the person asking most of the questions in the stretch being recapped. A co-host present for only part of the episode still counts as host for that part. Give that host a clip only when their questions are in the audio. Skip it when the host narrates and the interview questions were edited out. A recap with only the guest sounds like a monologue. Each clip is one speaker and starts and ends on a sentence boundary. Leave out the other speaker's interjections. Name the speaker correctly.
+Choose each clip by the test under Clips. Start where that moment starts, and stop once it lands, so no bridge has to explain it. Length follows from that. As a soft guide, roughly 10 to 20 seconds. A story can run longer and a sharp line can be 5 seconds. Usually under 20 seconds. Trim setup and repetition. These are someone else's work, so keep them short. Prefer the guest, and give every host who drives the conversation at least one clip, such as a question that sets up a story, a pushback, or a reaction that moves things along. The host who drives the conversation is the person asking most of the questions in the stretch being recapped. A co-host present for only part of the episode still counts as host for that part. Give that host a clip only when their questions are in the audio. Skip it when the host narrates and the interview questions were edited out. A recap with only the guest sounds like a monologue. Each clip is one speaker and starts and ends on a sentence boundary. Leave out the other speaker's interjections. Name the speaker correctly.
 
-Narration introduces the episode (who is on it, the format, and the main topics; preview only the clip points), bridges into each clip, and closes. Aim for 5 to 8 minutes. If the episode is under 20 minutes, aim for 3 to 5 minutes and 4 to 5 clips. Weave each glossed point into the bridge beside the related clip, in episode order. Do not save the glosses for a list at the end, and do not open on one. Use only facts stated in the episode. Add no outside background, even a date you are sure is true. Do not repeat a clip verbatim.
+Narration opens as Write the recap for listening says, bridges into each clip, and closes. Aim for 5 to 8 minutes. If the episode is under 20 minutes, aim for 3 to 5 minutes and 4 to 5 clips. Weave each glossed point into the bridge beside the related clip. Do not save the glosses for a list at the end, and do not open on one. Use only facts stated in the episode. Add no outside background, even a date you are sure is true. Do not repeat a clip verbatim.
 
-Write the narration the way [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md) describes under Writing for the ear, including how each word is written the way people say it. Do not put a URL or markdown in the narration.
+## Write the recap for listening
 
-### Bridges
+Write every sentence by [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md). It covers framing, one idea per sentence, attribution, signposts, numbers, rhythm, punctuation, and tone. Write each word the way people say it, as [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md) describes. Do not put a URL or markdown in the narration. The rules below add only what a recap with clips needs.
 
-Vary the bridges. No handoff is used more than twice. "Here is the guest." twice is the limit for that sentence. Mix three kinds:
+### Opening
 
-- A handoff that names the speaker with context, such as "The host asked how it started."
-- A handoff that sets up the moment, such as "Then the plan failed."
-- Once the voice is established, a bridge that runs straight into the clip with no handoff.
+Three short beats, each its own sentence. Beats one and two set the frame before any detail. Follow [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md) rule 1, frame before detail, and rule 4, close what you open.
 
-Every handoff still makes clear who is about to speak.
+1. Which show's episode this recaps, and its release date. No welcome, and no episode number.
+2. One sentence on the whole episode, so the listener knows what they'll get before any detail. One main clause, about 20 words or fewer. No chain of "and… then… while…", no list of every topic, and no semicolon.
+3. Then the story begins. A guest gets one sentence on who they are and why they're on. Never introduce the regular hosts. Name each one the way the show names them as they come up. The Daily Build says "Quinn" and "Reed". Say "Quinn", not "Quinn Alvarez".
 
-If a clip refers back to something ("she", "that", "back then", a callback), the bridge before that clip sets it up.
+- Good: "This is a recap of The Daily Build's March third episode. The hosts spend the whole hour on why Mira Chen stepped down as Northwind's chief."
+- Bad: "This is a recap of The Daily Build's March third episode and the hosts talk about Mira stepping down and then the stock while they also cover the launch and what Quinn thinks about the timeline."
+
+### Clips
+
+Clips are why a recap beats a summary. The question is: would the real voice say this better than the narrator? Narration bridges and frames. Clips carry the moments.
+
+Use a clip for:
+
+- conviction, emotion, or humor, where the delivery is the point
+- a disagreement, since two voices going back and forth beats "Quinn disagreed"
+- a line that's quotable as is
+- an expert explaining their own work, or a firsthand story
+- the moment the episode turns, like a reveal or an admission
+
+Skip a clip when:
+
+- it's dense facts or numbers, which narration says shorter and clearer
+- it's crosstalk, a long run-up, or poor audio
+- it only repeats what the narration just said
+- it needs a long setup before it makes sense
+
+The narrator never goes long without a voice when the episode has good moments to show. Back-to-back clips are fine when people are actually talking to each other.
+
+Name the speaker only when it isn't already clear who's next. That is [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md) rule 5: say whose claim it is before the claim, and skip the name when nobody could be confused. When the same person just spoke, or the narration just mentioned them, the clip can play with no lead-in. Otherwise work the name into the narration where it falls naturally. "Reed thinks the board moved too fast." "Quinn pushes back." "That's where Reed jumps in." Never use the same handoff shape twice in a row, and never give away the clip's point before it plays.
+
+If a clip refers back to something ("she", "that", "back then", a callback), the bridge before it sets that up.
+
+Vary clip and narration lengths. Even lengths sound mechanical.
+
+### Structure
+
+- Organize by the episode's questions or arguments, not by the clock. "Who leaked it, and why?" is easier to follow than minute by minute. Within a question, keep episode order.
+- Keep each host's stance consistent with what they said. Set it up once and build on it, so the listener can place each voice. Don't flatten a change of mind the episode really shows.
+- Each new question gets a spoken signpost, per write-for-the-ear.
+- End on what's still open, or on the split between the hosts. Don't recap the recap. The listener just heard it, and the last line is what they keep.
+
+### Claims
+
+- Attribute every claim to the person who made it, so a guess stays a guess. Write "Quinn's guess is the city desk", not "the leak came from the city desk".
+- No narrator opinions. Follow the tone rules in write-for-the-ear.
 
 ### Fact check
 
@@ -97,7 +137,7 @@ Before you build, list every name, number, date, and place in the narration. Eac
 
 ### script.json
 
-Write `script.json` for `podcue build`. It holds narration segments and clips, in episode order.
+Write `script.json` for `podcue build`. It holds narration segments and clips, in the planned order.
 
 ```json
 {
@@ -139,6 +179,6 @@ If you cannot make a picture, skip it. The episode keeps the feed cover. Never a
 
 With a computer and PodBox connected, publish `recap.mp3` with `hold_episode` and `complete_episode`, with the show notes as the description. Follow the Upload section of [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md).
 
-With a computer and PodBox not connected, do not sign in first. Send `recap.mp3` as a file in the chat, with the show notes and the chat notes above. If the chat cannot take a file, say where the file is and how the person can get it, such as a download or copy step their setup supports. Then offer once, in one short line, a private PodBox feed (https://podbox.sh) so new episodes show up in their podcast app. Publish to the feed only once they accept and the account is connected. To connect, follow First run in the use-podbox skill.
+With a computer and PodBox not connected, do not sign in first. Send `recap.mp3` as a file in the chat, with the show notes and the chat notes above. If the chat cannot take a file, say where the file is and how the person can get it, such as a download or copy step their setup supports. Then offer the private PodBox feed once, so new recaps show up in their podcast app. When they want it, follow First run in the use-podbox skill: [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/SKILL.md). It connects the account, subscribes them, and publishes this recap as their first episode. Do not publish before the account is connected.
 
 Without a computer, `create_speech_episode` publishes the narration, as Build says.
