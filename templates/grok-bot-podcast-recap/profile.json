@@ -1,0 +1,10 @@
+{
+  "name": "Podcast Recap",
+  "description": "Turns podcast episodes into short audio recaps: narration plus real clips of the speakers. Recaps on request, or watches shows for you.",
+  "avatar": null,
+  "author": "PodBox",
+  "visibility": "public",
+  "gettingStarted": {
+    "skill": "podcast-recap-getting-started-3"
+  }
+}
