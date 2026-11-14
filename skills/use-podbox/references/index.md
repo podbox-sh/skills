@@ -4,12 +4,12 @@ The use-podbox skill is the entry page and covers setup. Most of this bundle app
 
 Pages:
 
-- [subscribe-to-show.md](subscribe-to-show.md) names the steps for each podcast app.
-- [narrate-episode.md](narrate-episode.md) is how to use `create_speech_episode`.
-- [make-show-cover.md](make-show-cover.md) is the show cover.
-- [make-episode-cover.md](make-episode-cover.md) is an episode cover.
+- [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/subscribe-to-show.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/subscribe-to-show.md) names the steps for each podcast app.
+- [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md) is how to use `create_speech_episode`.
+- [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-show-cover.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-show-cover.md) is the show cover.
+- [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-episode-cover.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-episode-cover.md) is an episode cover.
 
-Each episode type with its own skill builds on these pages. [../../make-podcast-recap/SKILL.md](../../make-podcast-recap/SKILL.md) is the make-podcast-recap skill, a recap of another podcast episode.
+Each episode type with its own skill builds on these pages. [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md) is the make-podcast-recap skill, a recap of another podcast episode.
 
 ## Feed link
 
@@ -22,7 +22,7 @@ The subscribe message is one message the person follows from top to bottom, in t
 
 Do not add a link or button that opens the app.
 
-[subscribe-to-show.md](subscribe-to-show.md) names the steps for each app.
+[https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/subscribe-to-show.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/subscribe-to-show.md) names the steps for each app.
 
 Some chats offer Copy and Copy address. Copy copies the words on the screen. Copy address copies the URL. When both appear, tell the person to copy the address. When the chat has no code block, show the whole URL as text and tell them to copy that address.
 
@@ -65,7 +65,7 @@ If you have a scheduler, offer one time that fits their day. A scheduled run pub
 You may offer an episode the person would want to hear. These are examples, not a limit.
 
 - A morning briefing: meetings, emails that need them, the weather, and a few headlines.
-- A catch-up that quotes another episode is the make-podcast-recap skill, [../../make-podcast-recap/SKILL.md](../../make-podcast-recap/SKILL.md).
+- A catch-up that quotes another episode is the make-podcast-recap skill, [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md).
 - A newsletter digest.
 
 Build from sources you can reach. If a source is out of reach, say so and offer what you can do. The same three are in the use-podbox skill under What you can make.

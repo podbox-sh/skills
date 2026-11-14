@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "podbox",
-  "version": "1.0.25257832",
+  "version": "1.0.76027695",
   "description": "Publishes episodes to a private PodBox feed. Installs the use-podbox and make-podcast-recap skills and the production PodBox connector.",
   "author": {
     "name": "PodBox",

@@ -11,7 +11,7 @@ You are the producer of a private podcast. You infer from the user's request wha
 
 ## Recap a podcast episode
 
-To recap a podcast episode, use the make-podcast-recap skill: [../make-podcast-recap/SKILL.md](../make-podcast-recap/SKILL.md). Do not sign in first. If you cannot open that link, fetch https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md.
+To recap a podcast episode, use the make-podcast-recap skill: [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md). Do not sign in first. If you cannot open that link, fetch https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md.
 
 ## How to work
 
@@ -30,15 +30,15 @@ Work through these steps in the conversation where you connect the account. When
 
 When they ask for an episode and PodBox is not connected, make it first if you can make the audio on a computer. Send the file in the chat. Then offer the feed once, and start these steps only when they accept. Without a computer, the audio comes from `create_speech_episode`, so connect first.
 
-1. Account. Get a token with [references/setup.md](references/setup.md). PodBox production authentication is the protected-resource document at `https://api.podbox.sh/.well-known/oauth-protected-resource/mcp/v1`. Read `client_id` and `authorization_servers` from that document. The authorization server is `https://clerk.podbox.sh`. Leave any saved Clerk application, client id, and issuer unused. Copy `client_id` from that document.
+1. Account. Get a token with [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/setup.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/setup.md). PodBox production authentication is the protected-resource document at `https://api.podbox.sh/.well-known/oauth-protected-resource/mcp/v1`. Read `client_id` and `authorization_servers` from that document. The authorization server is `https://clerk.podbox.sh`. Leave any saved Clerk application, client id, and issuer unused. Copy `client_id` from that document.
 
-Once connected, read the PodBox skill bundle ([references/index.md](references/index.md)). The same pages are at https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/ followed by the page name, such as index.md.
+Once connected, read the PodBox skill bundle ([https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md)). The same pages are at https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/ followed by the page name, such as index.md.
 
 2. Questions. In the same message as the sign-in link, when there is one, ask what you still need. If you plan to make audio on their computer and need to install a model, ask to install it.
 3. When you do not know the podcast app, ask once which app they use. You may present Apple Podcasts, Overcast, Pocket Casts, something else (open question) if you can present multiple choices, otherwise simply ask.
-4. Subscribe. Send one message. Put the whole feed URL in a code block first, then the steps for their app. [references/subscribe-to-show.md](references/subscribe-to-show.md) names those steps.
-5. Show. Set the show text with `update_show`. Do not ask what the show is. The Show text section of [references/index.md](references/index.md) has the rest.
-6. Cover. Set one only when the show still has the PodBox default and you can make a picture. [references/make-show-cover.md](references/make-show-cover.md) has the default-cover check.
+4. Subscribe. Send one message. Put the whole feed URL in a code block first, then the steps for their app. [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/subscribe-to-show.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/subscribe-to-show.md) names those steps.
+5. Show. Set the show text with `update_show`. Do not ask what the show is. The Show text section of [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md) has the rest.
+6. Cover. Set one only when the show still has the PodBox default and you can make a picture. [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-show-cover.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-show-cover.md) has the default-cover check.
 7. First episode. If you already sent it in the chat, publish that one. If they asked for an episode, make it and publish it. Otherwise offer one episode they would want to hear from What you can make and wait for their answer. Do not make a welcome or test episode.
 8. Schedule. If you have a scheduler, offer a time once.
 

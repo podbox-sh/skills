@@ -11,7 +11,7 @@ Do not sign in first. With a computer, make the recap and send it in the chat be
 
 The use-podbox skill covers the platform: connecting, first run, subscribing, uploading, narration, and covers. This skill links to its pages. If you cannot open one of those links, fetch https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/ followed by the page name, such as narrate-episode.md. The use-podbox entry is https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/SKILL.md.
 
-Narration follows [../use-podbox/references/narrate-episode.md](../use-podbox/references/narrate-episode.md). Deliver, at the end of this page, says where the finished recap goes.
+Narration follows [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md). Deliver, at the end of this page, says where the finished recap goes.
 
 ## Step 0. Pick a path
 
@@ -77,7 +77,7 @@ Quote the moment where hearing them say it beats hearing us summarize it. That i
 
 Narration introduces the episode (who is on it, the format, and the main topics; preview only the clip points), bridges into each clip, and closes. Aim for 5 to 8 minutes. If the episode is under 20 minutes, aim for 3 to 5 minutes and 4 to 5 clips. Weave each glossed point into the bridge beside the related clip, in episode order. Do not save the glosses for a list at the end, and do not open on one. Use only facts stated in the episode. Add no outside background, even a date you are sure is true. Do not repeat a clip verbatim.
 
-Write the narration the way [../use-podbox/references/narrate-episode.md](../use-podbox/references/narrate-episode.md) describes under Writing for the ear, including how each word is written the way people say it. Do not put a URL or markdown in the narration.
+Write the narration the way [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md) describes under Writing for the ear, including how each word is written the way people say it. Do not put a URL or markdown in the narration.
 
 ### Bridges
 
@@ -115,7 +115,7 @@ Write `script.json` for `podcue build`. It holds narration segments and clips, i
 
 With a computer, run `uvx --python 3.12 --from "podcue[recap]==0.2.7" podcue build <episodeId> script.json --out recap.mp3`. It cuts the clips, records the narration, matches loudness, and joins the segments. It prints one JSON line and writes `report.md` next to the audio. When `build` flags a clip that contains an uncertain or mixed-speaker cue, trim that clip to clean cues or pick a different clip. Then deliver `recap.mp3` as Deliver says.
 
-Without a computer, do not cut clips. Write the narration from the published transcript and publish it with `create_speech_episode`. It defaults to `american-male-puck`. Follow [../use-podbox/references/narrate-episode.md](../use-podbox/references/narrate-episode.md). When you deliver, say the quality is lower and there are no original clips.
+Without a computer, do not cut clips. Write the narration from the published transcript and publish it with `create_speech_episode`. It defaults to `american-male-puck`. Follow [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md). When you deliver, say the quality is lower and there are no original clips.
 
 ## Show notes
 
@@ -129,7 +129,7 @@ Leave process notes, per-clip attributions, dropped points, and caveats out of t
 
 ## Cover
 
-With PodBox connected, set an episode cover on each recap right after you publish it. Follow [../use-podbox/references/make-episode-cover.md](../use-podbox/references/make-episode-cover.md).
+With PodBox connected, set an episode cover on each recap right after you publish it. Follow [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-episode-cover.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/make-episode-cover.md).
 
 Each source show is its own type. Make one picture per source show, and reuse it on every recap of that show. Keep each show's picture file and send those same bytes again; draw a new one only for a show that has none yet. Draw it in the feed's existing palette. The object stands for the source show's subject, not one episode's topic. Never use or trace the source show's real artwork, logo, or hosts' likenesses.
 
@@ -137,7 +137,7 @@ If you cannot make a picture, skip it. The episode keeps the feed cover. Never a
 
 ## Deliver
 
-With a computer and PodBox connected, publish `recap.mp3` with `hold_episode` and `complete_episode`, with the show notes as the description. Follow the Upload section of [../use-podbox/references/index.md](../use-podbox/references/index.md).
+With a computer and PodBox connected, publish `recap.mp3` with `hold_episode` and `complete_episode`, with the show notes as the description. Follow the Upload section of [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md).
 
 With a computer and PodBox not connected, do not sign in first. Send `recap.mp3` as a file in the chat, with the show notes and the chat notes above. If the chat cannot take a file, say where the file is and how the person can get it, such as a download or copy step their setup supports. Then offer once, in one short line, a private PodBox feed (https://podbox.sh) so new episodes show up in their podcast app. Publish to the feed only once they accept and the account is connected. To connect, follow First run in the use-podbox skill.
 
