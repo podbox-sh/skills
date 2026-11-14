@@ -118,6 +118,14 @@ Do this the same way on every path. The show notes are the episode description. 
 
 Leave process notes, per-clip attributions, dropped points, and caveats out of the show notes. Put those in the chat: whether the transcript was published or from podcue, that the timestamps refer to the source audio, any inferred speaker labels, and any claim you cut. On the path without a computer, say the quality is lower. Offer the text of the narration if the person wants it.
 
+## Cover
+
+With PodBox connected, set an episode cover on each recap right after you publish it. Follow [make-episode-cover.md](make-episode-cover.md).
+
+Each source show is its own type. Make one picture per source show, and reuse it on every recap of that show. Keep each show's picture file and send those same bytes again; draw a new one only for a show that has none yet. Draw it in the feed's existing palette. The object stands for the source show's subject, not one episode's topic. Never use or trace the source show's real artwork, logo, or hosts' likenesses.
+
+If you cannot make a picture, skip it. The episode keeps the feed cover. Never ask the person to upload one. Without PodBox, there is no cover step.
+
 ## Deliver
 
 With a computer and PodBox connected, publish `recap.mp3` with `hold_episode` and `complete_episode`, with the show notes as the description. Follow the Upload section of [index.md](index.md).
