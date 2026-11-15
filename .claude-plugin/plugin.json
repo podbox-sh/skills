@@ -1,6 +1,6 @@
 {
   "name": "podbox",
-  "version": "1.0.24377706",
+  "version": "1.0.95419330",
   "description": "Publishes episodes to a private PodBox feed. Installs the use-podbox, make-podcast-recap, write-for-the-ear, and pronounce-for-tts skills and the production PodBox connector.",
   "author": {
     "name": "PodBox",

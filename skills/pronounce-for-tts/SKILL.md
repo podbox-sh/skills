@@ -11,7 +11,7 @@ The voice reads the characters it is given, then turns them into American Englis
 
 - Acronyms follow how people say them. A word-like acronym stays as written, such as NASA, NATO, and SCOTUS. A letter-by-letter acronym is written solid, such as "FBI", "USC", "AI", and "CSV file".
 - In the narration, write numbers as spoken. "four hundred thousand" not "400,000". "two point four percent" not "2.4%". "one point five billion dollars" not "$1.5B". A year is said, such as "nineteen ninety-six". A symbol is written as said, such as "and" for & and "the Chinese Communist Party" for the abbreviation.
-- podcue 0.2.7 also rewrites digits, money, percents, clock times, and years in the narration before Kokoro. Writing the spoken form still works on that path and on `create_speech_episode`.
+- podcue 0.2.8 also rewrites digits, money, percents, clock times, and years in the narration before Kokoro. Writing the spoken form still works on that path and on `create_speech_episode`.
 
 ## Names that are not English
 
@@ -33,7 +33,7 @@ Convert the pronunciation you trust into misaki phonemes, with `ˈ` immediately 
 
 Two paths read the same bracket. Both keep it. Write one word inside the brackets, `[Word](/phonemes/)`. A phrase in one pair puts the sounds on the first word and drops the rest. A possessive stays outside: `[Huawei](/hwˈɑwˌA/)'s`. Put `ˈ` immediately before the stressed vowel. `ˌ` marks another syllable when it needs a weaker stress. Use only misaki's American symbols. A character outside that set is dropped, including a plain Latin `g`. The `g` sound is `ɡ`. Do not put a digit in the override.
 
-**On a computer, podcue 0.2.7.** `say_numbers` leaves the brackets alone. Kokoro 0.9.4 then runs misaki 0.9.4 English G2P, which replaces the word with the phoneme string. Use the override.
+**On a computer, podcue 0.2.8.** `say_numbers` leaves the brackets alone. Kokoro 0.9.4 then runs misaki 0.9.4 English G2P, which replaces the word with the phoneme string. Use the override.
 
 **Hosted speech, `create_speech_episode`.** The server trims the text and does not strip brackets or parentheses. `apps/kokoro/synthesize.py` runs that same G2P. Use the override. Do not respell the name instead, except a regular host's unconfirmed name.
 
