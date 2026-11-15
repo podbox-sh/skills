@@ -17,7 +17,7 @@ The voice reads the characters it is given, then turns them into American Englis
 
 Spot a word the American voice is likely to miss. That is a name that is not English, a brand, or a word borrowed from another language.
 
-Before you search, read `pronunciations.json` in the recap working directory. That directory is the folder that holds the episode directories from `podcue fetch`, not a folder inside one episode. Without a computer, keep the same file with the other working files for that show. If the name is already there, use its phonemes.
+`pronunciations.json` lives in the parent recaps folder, the one folder that holds every episode folder from `podcue fetch`. It never goes inside one episode's folder. One list is shared across all recaps. Before you search, read it there. If it is missing there, create it there as `[]`. Without a computer, keep one such file with your other working files and share it across all recaps. If the name is already there, use its phonemes.
 
 When it is missing, look it up on the web only. Do not download a phoneme model or an alignment model. wav2vec2 is out because of its size.
 
@@ -25,7 +25,9 @@ Search for the person saying their own name. Try "<name> how to pronounce my nam
 
 Trust, in order: the person themselves, then a reliable IPA note such as Wikipedia's pronunciation, then a crowd guide. If the sources disagree, tell the user and wait. Do not pick one.
 
-Convert the pronunciation you trust into misaki phonemes, with `ˈ` immediately before the stressed vowel. Say the name once inside a short sentence and listen. Then append one object to `pronunciations.json`: `name`, `phonemes`, `source`, and `date` as `YYYY-MM-DD`. Read that file before every later narration. Do not commit it.
+A regular host's name is the exception to waiting. Always say it the way the show says it. Never replace one host's name with "the host". When no source confirms how the host says it, or the sources disagree, use the default reading of the real spelling or a plain respelling in ordinary letters. Tell the user in the chat that the pronunciation is unconfirmed. Do not save an unconfirmed name to `pronunciations.json`.
+
+Convert the pronunciation you trust into misaki phonemes, with `ˈ` immediately before the stressed vowel. Say the name once inside a short sentence and listen. Then append one object to `pronunciations.json` in the recaps folder: `name`, `phonemes`, `source`, and `date` as `YYYY-MM-DD`. Read that file before every later narration. Do not commit it.
 
 ## The override
 
@@ -33,14 +35,14 @@ Two paths read the same bracket. Both keep it. Write one word inside the bracket
 
 **On a computer, podcue 0.2.7.** `say_numbers` leaves the brackets alone. Kokoro 0.9.4 then runs misaki 0.9.4 English G2P, which replaces the word with the phoneme string. Use the override.
 
-**Hosted speech, `create_speech_episode`.** The server trims the text and does not strip brackets or parentheses. `apps/kokoro/synthesize.py` runs that same G2P. Use the override. Do not respell the name instead.
+**Hosted speech, `create_speech_episode`.** The server trims the text and does not strip brackets or parentheses. `apps/kokoro/synthesize.py` runs that same G2P. Use the override. Do not respell the name instead, except a regular host's unconfirmed name.
 
-Leave the real spelling when a test listen already sounds right. Do not invent a respelling such as stress capitals. The override is the one bracket the voice reads. It is not markdown to strip. Other markdown stays out of the script.
+Leave the real spelling when a test listen already sounds right. Do not invent a respelling such as stress capitals. The plain respelling for a regular host's unconfirmed name has no stress capitals. The override is the one bracket the voice reads. It is not markdown to strip. Other markdown stays out of the script.
 
 | Word | Write this | Where the stress is | Source |
 | --- | --- | --- | --- |
 | Huang | [Huang](/hwˈɑŋ/) | the only syllable | last resort. The onset matches misaki's Huangshi (`hwˌɑŋʃˈi`). Not the person, and not a Wikipedia note. |
 | Huawei | [Huawei](/hwˈɑwˌA/) | the first syllable, WAH-way | last resort. `A` is the vowel misaki uses for "way" (`wˈA`). Not the person, and not a Wikipedia note. |
-| Chamath | pending. [Chamath](/ʧəmˈɑθ/) or [Chamath](/ʧəmˈɔθ/) | the second syllable, cha-MOTH | the stress is stated. The vowel is not chosen yet. Do not narrate it until someone listens and picks `ɑ` or `ɔ`. A crowd guide's "CHAH-math" is the weak source. |
+| Chamath | pending. [Chamath](/ʧəmˈɑθ/) or [Chamath](/ʧəmˈɔθ/) | the second syllable, cha-MOTH | the stress is stated. The vowel is not chosen yet. Do not use either override until someone listens and picks `ɑ` or `ɔ`. For a regular host, say the name by the host rule above. A crowd guide's "CHAH-math" is the weak source. |
 
 `ˈ` sits immediately before the stressed vowel, which is how misaki's lexicon writes it (`mˈæθ`, `ʧˈInə`). An override is copied through as written. `[Chamath](/ʧəˈmɑθ/)` and `[Chamath](/ʧəmˈɑθ/)` are different token strings, `ʧəˈmɑθ` and `ʧəmˈɑθ`. The first leaves the stress mark before `m`. Use the second shape. `θ` is the th in "math". If the episode or the person says a name differently, use that and save it.

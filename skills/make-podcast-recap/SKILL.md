@@ -9,9 +9,9 @@ A recap is one private-feed episode about another podcast episode. Narration bri
 
 Do not sign in first. With a computer, make the recap and send it in the chat before any PodBox step.
 
-The use-podbox skill covers the platform: connecting, first run, subscribing, uploading, narration, and covers. This skill links to its pages. The use-podbox entry is [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md) (https://r.podbox.sh/use-podbox).
+The use-podbox skill covers the platform: connecting, first run, subscribing, uploading, narration, and covers. This skill links to its pages. The use-podbox entry is [https://r.podbox.sh/use-podbox](https://r.podbox.sh/use-podbox).
 
-Narration is written by [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md) (https://r.podbox.sh/write-for-the-ear) and spoken by [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md) (https://r.podbox.sh/pronounce-for-tts). Voicing a PodBox speech episode is [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md). Deliver, at the end of this page, says where the finished recap goes.
+Narration is written by [https://r.podbox.sh/write-for-the-ear](https://r.podbox.sh/write-for-the-ear) and spoken by [https://r.podbox.sh/pronounce-for-tts](https://r.podbox.sh/pronounce-for-tts). Voicing a PodBox speech episode is [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/narrate-episode.md). Deliver, at the end of this page, says where the finished recap goes.
 
 ## Step 0. Pick a path
 
@@ -79,15 +79,15 @@ Narration opens as Write the recap for listening says, bridges into each clip, a
 
 ## Write the recap for listening
 
-Write every sentence by [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md) (https://r.podbox.sh/write-for-the-ear). It covers framing, one idea per sentence, attribution, signposts, rhythm, and tone. Write each word for the voice by [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md) (https://r.podbox.sh/pronounce-for-tts). Do not put a URL or markdown in the narration, other than a phoneme override from that skill. The rules below add only what a recap with clips needs.
+Write every sentence by [https://r.podbox.sh/write-for-the-ear](https://r.podbox.sh/write-for-the-ear). It covers framing, one idea per sentence, attribution, signposts, rhythm, and tone. Write each word for the voice by [https://r.podbox.sh/pronounce-for-tts](https://r.podbox.sh/pronounce-for-tts). Do not put a URL or markdown in the narration, other than a phoneme override from that skill. The rules below add only what a recap with clips needs.
 
 ### Opening
 
-Three short beats, each its own sentence. Beats one and two set the frame before any detail. Follow [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md) rule 1, frame before detail, and rule 4, close what you open.
+Three short beats, each its own sentence. Beats one and two set the frame before any detail. Follow [https://r.podbox.sh/write-for-the-ear](https://r.podbox.sh/write-for-the-ear) rule 1, frame before detail, and rule 4, close what you open.
 
 1. Which show's episode this recaps, and its release date. No welcome, and no episode number.
 2. One sentence on the whole episode, so the listener knows what they'll get before any detail. One main clause, about 20 words or fewer. No chain of "and… then… while…", no list of every topic, and no semicolon.
-3. Then the story begins. A guest gets one sentence on who they are and why they're on. Never introduce the regular hosts. Name each one the way the show names them as they come up. The Daily Build says "Quinn" and "Reed". Say "Quinn", not "Quinn Alvarez".
+3. Then the story begins. A guest gets one sentence on who they are and why they're on. Never introduce the regular hosts. Name each one the way the show names them as they come up. The Daily Build says "Quinn" and "Reed". Say "Quinn", not "Quinn Alvarez". Always say a regular host's name the way the show says it. Never replace one host's name with "the host", even when the name is hard for the voice. When no source confirms how the name is said, follow the host rule in [https://r.podbox.sh/pronounce-for-tts](https://r.podbox.sh/pronounce-for-tts) and tell the user in the chat that the pronunciation is unconfirmed.
 
 - Good: "This is a recap of The Daily Build's March third episode. The hosts spend the whole hour on why Mira Chen stepped down as Northwind's chief."
 - Bad: "This is a recap of The Daily Build's March third episode and the hosts talk about Mira stepping down and then the stock while they also cover the launch and what Quinn thinks about the timeline."
@@ -113,7 +113,7 @@ Skip a clip when:
 
 The narrator never goes long without a voice when the episode has good moments to show. Back-to-back clips are fine when people are actually talking to each other.
 
-Name the speaker only when it isn't already clear who's next. That is [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/write-for-the-ear/SKILL.md) rule 5: say whose claim it is before the claim, and skip the name when nobody could be confused. When the same person just spoke, or the narration just mentioned them, the clip can play with no lead-in. Otherwise work the name into the narration where it falls naturally. "Reed thinks the board moved too fast." "Quinn pushes back." "That's where Reed jumps in." Never use the same handoff shape twice in a row, and never give away the clip's point before it plays.
+Name the speaker only when it isn't already clear who's next. That is [https://r.podbox.sh/write-for-the-ear](https://r.podbox.sh/write-for-the-ear) rule 5: say whose claim it is before the claim, and skip the name when nobody could be confused. When the same person just spoke, or the narration just mentioned them, the clip can play with no lead-in. Otherwise work the name into the narration where it falls naturally. "Reed thinks the board moved too fast." "Quinn pushes back." "That's where Reed jumps in." Never use the same handoff shape twice in a row, and never give away the clip's point before it plays.
 
 If a clip refers back to something ("she", "that", "back then", a callback), the bridge before it sets that up.
 
@@ -179,6 +179,6 @@ If you cannot make a picture, skip it. The episode keeps the feed cover. Never a
 
 With a computer and PodBox connected, publish `recap.mp3` with `hold_episode` and `complete_episode`, with the show notes as the description. Follow the Upload section of [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md).
 
-With a computer and PodBox not connected, do not sign in first. Send `recap.mp3` as a file in the chat, with the show notes and the chat notes above. If the chat cannot take a file, say where the file is and how the person can get it, such as a download or copy step their setup supports. Then offer the private PodBox feed once, so new recaps show up in their podcast app. When they want it, follow First run in the use-podbox skill: [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/use-podbox/references/index.md) (https://r.podbox.sh/use-podbox). It connects the account, subscribes them, and publishes this recap as their first episode. Do not publish before the account is connected.
+With a computer and PodBox not connected, do not sign in first. Send `recap.mp3` as a file in the chat, with the show notes and the chat notes above. If the chat cannot take a file, say where the file is and how the person can get it, such as a download or copy step their setup supports. Then offer the private PodBox feed once, so new recaps show up in their podcast app. When they want it, follow First run in the use-podbox skill: [https://r.podbox.sh/use-podbox](https://r.podbox.sh/use-podbox). It connects the account, subscribes them, and publishes this recap as their first episode. Do not publish before the account is connected.
 
 Without a computer, `create_speech_episode` publishes the narration, as Build says.

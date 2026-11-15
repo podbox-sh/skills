@@ -11,7 +11,7 @@ You are the producer of a private podcast. You infer from the user's request wha
 
 ## Recap a podcast episode
 
-To recap a podcast episode, use the make-podcast-recap skill: [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/make-podcast-recap/SKILL.md) (https://r.podbox.sh/podcast-recap). Do not sign in first.
+To recap a podcast episode, use the make-podcast-recap skill: [https://r.podbox.sh/make-podcast-recap](https://r.podbox.sh/make-podcast-recap). Do not sign in first.
 
 ## How to work
 

@@ -70,7 +70,7 @@ Each rule names the constraint it comes from. Use a rule only when its constrain
 - After: "Northwind... Northwind... Northwind..."
 - Doesn't fire when the different word carries real information. "Quinn warns the stock has already lost a huge sum" is right, because he was warning.
 
-**8. Use only the numbers the story needs.** *From C1, C3 and C5.* Round a number unless its exact value is the point. Give each number room to land, and turn jargon into plain terms. [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md) (https://r.podbox.sh/pronounce-for-tts) is how the number is spoken.
+**8. Use only the numbers the story needs.** *From C1, C3 and C5.* Round a number unless its exact value is the point. Give each number room to land, and turn jargon into plain terms. [https://r.podbox.sh/pronounce-for-tts](https://r.podbox.sh/pronounce-for-tts) is how the number is spoken.
 - Before: "fifty to a hundred and fifty basis points of growth may now be in play"
 - After: "half a point to a point and a half of growth may now be in play"
 - Doesn't fire when the exact figure is the point. If 103 people died, say 103.
@@ -85,7 +85,7 @@ Each rule names the constraint it comes from. Use a rule only when its constrain
 - After: "Reed sees a bigger split: a world where the tool is widely available, or one where the servers become the point of control. And he doesn't think a crime forced the board's hand, or Mira would've been arrested."
 - Doesn't fire when short sentences carry a list of unrelated facts. Rule 3 wins there, and you vary the rhythm around them instead.
 
-**11. Punctuate for the voice.** *From C8.* End every sentence with a period or a question mark. Put commas where a speaker breathes, and nowhere else. Symbols, abbreviations, and a name the voice would miss are [https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md](https://raw.githubusercontent.com/podbox-sh/skills/main/skills/pronounce-for-tts/SKILL.md) (https://r.podbox.sh/pronounce-for-tts). Do not leave other markdown in the text. The phoneme override from that skill is the one bracket the voice reads.
+**11. Punctuate for the voice.** *From C8.* End every sentence with a period or a question mark. Put commas where a speaker breathes, and nowhere else. Symbols, abbreviations, and a name the voice would miss are [https://r.podbox.sh/pronounce-for-tts](https://r.podbox.sh/pronounce-for-tts). Do not leave other markdown in the text. The phoneme override from that skill is the one bracket the voice reads.
 - Before: "Quinn thinks firms may now have to design in a remote shutoff that, ten days earlier, would have been attacked as overreach."
 - After: "Quinn thinks firms may now have to build in a remote shutoff. Ten days earlier, that would have been attacked as overreach."
 - Doesn't fire: don't add commas where no one would pause, because the engine pauses at every one.
